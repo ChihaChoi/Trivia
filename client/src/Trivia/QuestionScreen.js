@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Timer from '../Timer'
 import AnswerButton from './AnswerButton'
 import socket from '../socket'
-import Transition_SlideLeft from '../transitions/Transition_SlideLeft'
 
 
 class QuestionScreen extends Component {

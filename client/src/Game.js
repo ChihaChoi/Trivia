@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
 
 import './App.css'
-import Quiplash from './Quiplash'
 import socket from './socket'
 import Login from './Login'
 import Transition_SlideLeft from './transitions/Transition_SlideLeft'
-import Trivia from './Trivia/Trivia';
 import TriviaMain from './Trivia/TriviaMain';
 
 
@@ -26,11 +24,7 @@ class Game extends Component {
 
 
   componentDidMount(){
-  //currently irrelevant
-  //   socket.on('changeGame',()=>{ this.setState({game:"quiplash"}) 
-  // console.log(this.state.game)})
-  // socket.on('changeColor',color=>this.setState({color:'theme-'+color}))
-  //=========
+  //write question and answers to state once received from server
   socket.on('question',(question,answers)=>{
     if(this.state.waiting){
       this.setState({ 

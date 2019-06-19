@@ -80,7 +80,7 @@ class TriviaMain extends Component {
             {/* //================== */}
 
             {/* Transition layer */}
-            {this.state.transition=="on"? <Transition_SlideLeft newTheme="theme-blue" /> : ""}
+            {this.state.transition==="on"? <Transition_SlideLeft newTheme="theme-blue" /> : ""}
 
 
             <ScoreButton  playerData={this.state.playerData} />
