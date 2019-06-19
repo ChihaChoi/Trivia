@@ -1,0 +1,36 @@
+.results{
+    &__container{
+        position: relative;
+        overflow: visible;
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+        &:last-child{
+            margin-bottom: 5rem;
+        }
+    }
+    &__answer{
+        font-size:1.6rem;
+        background-color: blueviolet;
+        width: 80vw;
+        border-radius: 5px;
+        padding: 1.5rem;
+        padding-bottom:3rem;
+    }
+    &__players{
+        position: absolute;
+        top:6rem;
+        left:1rem;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        overflow: visible;
+        
+        &--player{
+            font-size:2rem;
+            padding: 0.5rem 1.5rem;
+            border-radius: 100rem;
+            background-color:red;
+            transform: rotate(45deg)
+        }
+    }
+}

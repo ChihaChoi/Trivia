@@ -1,0 +1,36 @@
+.btn:first-child {
+    margin-top: 3rem;
+  }
+  
+.btn {
+  font-size: 1.6rem;
+  min-width: 70vw;
+  max-width: 70vw;
+  border: none;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  border-radius: 4px;
+  color: white;
+  transition: transform 0.1s;
+  &:active {
+      transform: translateY(2px);
+    }
+
+  //makes label inside of button extend to whole button
+  display: flex;
+  align-content: stretch;
+  align-items: stretch;
+}
+
+
+
+label{
+  width:100%;
+}
+.submit.btn{
+  font-size: 3rem,
+}
+#upload{
+  position: fixed;
+}
+

@@ -1,0 +1,47 @@
+.score{
+    &__checkbox{
+        visibility:hidden;
+        & *{
+        visibility:hidden;
+        }
+    }
+    &__button{
+        position:fixed;
+        top:3rem;
+        left:3rem;
+        border-radius: 5px;
+        height:4rem;
+        width:4rem;
+        background-color: #fff;
+        display: flex;
+        // align-content: center;
+        align-items: center;
+        justify-content: center;
+        z-index: 1000
+    }
+    
+}
+
+.fa-trophy{
+    color:red;
+    font-size: 2.5rem;
+}
+.scoreScreen{
+    position:fixed;
+    top:0;
+    width:100vw;
+    height:100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    margin-top: 0;
+    align-items: center;
+    align-content: center;
+
+    &__playerInfo{
+        // width:100%;
+        color:red;
+        text-align: center;
+    }
+
+}

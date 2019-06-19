@@ -1,0 +1,39 @@
+
+  .quiplash{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+  }
+  .timer{
+    color: white;
+    font-size: 2rem;
+  }
+  
+  .container {
+    width:100%;
+    position: absolute;
+    top: 15vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: white;
+  }
+  
+
+  
+
+  .avatar{
+    width:80vw;
+    height:80vw;
+    align-items: center;
+    border-radius:50%;
+    object-fit: cover;
+
+  }
+  #upload{
+    visibility: hidden;
+  }
+
+  

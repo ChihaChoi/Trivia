@@ -1,0 +1,26 @@
+
+$list: red, green, blue, purple;
+$colors: (
+    blue: (
+        base: #104e8b,
+        button: #0a325a,
+        button-active: #173858
+    ),
+    red: (
+        base: #b62626,
+        button: #791212,
+        button-active: #7a2626
+    ),
+    green: (
+        base: #108b3f,
+        button: #084921,
+        button-active: #144b29
+
+    ),
+    purple: (
+        base: #6e1567,
+        button: #460d41,
+        button-active: #3f133b
+
+    )
+)
