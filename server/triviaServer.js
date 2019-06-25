@@ -1,9 +1,11 @@
 const io = require('./server').io
 const request = require('request')
 
+var players = [];
 
-const players = [];
-let playerNames = []
+
+const roundLength = 20
+const questionLength = 14
 
 
 class Player{
@@ -24,10 +26,10 @@ class PlayerData{
 timer= 0
 setInterval(()=>{
     timer++
-    if (timer > 20){
+    if (timer > roundLength){
         sendTrivia()
         timer=0
-    } else if (timer ===14){
+    } else if (timer === questionLength){
         sendPlayerData()
         sendPlayerAnswers()
     }
@@ -62,7 +64,8 @@ io.on('connection',(socket)=>{
     
     socket.on('answer',(answer,player)=>{
         if (answer!=""){
-            if(answer==correctAns){
+            //add to score if player answered correctly
+            if(answer==correctAnswer){
                 findName(player, players).score++
             }
             console.log(players)
@@ -87,7 +90,7 @@ io.on('connection',(socket)=>{
 })
 
 function sendPlayerAnswers(){
-    io.emit('answers',currentRoundAnswers, correctAns)
+    io.emit('answers',currentRoundAnswers, correctAnswer)
 }
 
 //socket can not emit socketID so use this func to emit a clone without socketId
@@ -101,11 +104,11 @@ function sendPlayerData(){
 }
 
 
-// requests trivia question and answers from api, and inserts correct answers at random index correctAns
 var currentRoundAnswers=[[],[],[],[]]
-var correctAns = ""
+var correctAnswer = ""
+// requests trivia question and answers from api, and inserts correct answers at random index correctAnswer
 function sendTrivia(){
-    correctAns = Math.floor(Math.random()*4);
+    correctAnswer = Math.floor(Math.random()*4);
     currentRoundAnswers=[[],[],[],[]];
     
     request('https://opentdb.com/api.php?amount=1&type=multiple', function(error, response, body){
@@ -122,7 +125,7 @@ function sendTrivia(){
                 var answers = data[0].incorrect_answers;
                 
                 //insert correct answer randomly into list of answers
-                answers.splice(correctAns,0,data[0].correct_answer)
+                answers.splice(correctAnswer,0,data[0].correct_answer)
                 
                 io.emit('question',question, answers)
                 console.log(question)
@@ -133,7 +136,7 @@ function sendTrivia(){
 
 }
 
-//returns object with name : nameKey from myArray
+//returns object with name = nameKey from myArray
 function findName(nameKey,myArray){
     for (var i=0 ; i<myArray.length ; i++){
         if(myArray[i].name === nameKey){
@@ -143,17 +146,5 @@ function findName(nameKey,myArray){
     console.log("failed to find")
     return 0
 }
-//returns index of nameKey in myArray
-function findNameIndex(nameKey,myArray){
-    for (var i=0 ; i<myArray.length ; i++){
-        if(myArray[i].name === nameKey){
-            return i;
-        }
-    }
-    console.log("failed to find")
-    return 0
-}
 
 
-
-module.exports = io
