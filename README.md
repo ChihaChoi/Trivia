@@ -60,6 +60,6 @@ To connect to the client using your mobile device, type your IPv4 Address into y
   * transition animations
   * timer animation
 
-## Optional Features
+### Optional Features
   * player connection status on score screen
   * vote on next category
