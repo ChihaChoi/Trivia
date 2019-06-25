@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ResultsAnswer from './ResultsAnswer';
+import Timer from '../Timer'
 
 class AnswerScreen extends Component {
     constructor(props) {
@@ -8,6 +9,7 @@ class AnswerScreen extends Component {
     }
     render() { 
         return ( <div className="container">
+            <Timer />
             {/* <div className ="catagory title">General Nahlej</div> */}
             <div className = "question" dangerouslySetInnerHTML={{__html: this.props.question}} ></div>
             <ResultsAnswer correct={this.props.correctAnswer===0? "yes" : null} answer={this.props.answers[0]} players={this.props.playerAnswers[0]} />
