@@ -23,7 +23,7 @@ class QuestionScreen extends Component {
         return ( 
         <div className="container">
             
-            <Timer time={this.props.time} /> 
+            <Timer /> 
             
             {/* update with correct catagory title */}
             <div className ="catagory title">General Nahlej</div>

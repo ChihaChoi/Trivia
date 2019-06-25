@@ -15,8 +15,8 @@ class TriviaMain extends Component {
             data:[],
             question:"" ,
             answers:["","","",""],
-            playerAnswers:[[],[],[],[]],
-        time:0 }
+            playerAnswers:[[],[],[],[]]
+        }
     }
 
     //sliding page transition
@@ -61,8 +61,6 @@ class TriviaMain extends Component {
             this.setState({playerData:data})
             console.log('received')
         })
-        //timer update [temporary function, move to timer component]
-        socket.on('time',time=>this.setState({time:time}))
     }
 
     //change mode buttons [temporary buttons for admin functionality]
@@ -92,7 +90,6 @@ class TriviaMain extends Component {
             <ScoreButton  playerData={this.state.playerData} />
             {currentScreen === "questions" ?
             <QuestionScreen 
-            time={this.state.time} 
             question={this.state.question} 
             answers={this.state.answers}
             /> :
