@@ -10,10 +10,10 @@ class AnswerScreen extends Component {
         return ( <div className="container">
             {/* <div className ="catagory title">General Nahlej</div> */}
             <div className = "question" dangerouslySetInnerHTML={{__html: this.props.question}} ></div>
-            <ResultsAnswer correct={this.props.correctAns===0? "yes" : null} answer={this.props.answers[0]} players={this.props.playersanswers[0]} />
-            <ResultsAnswer correct={this.props.correctAns===1? "yes" : null} answer={this.props.answers[1]} players={this.props.playersanswers[1]} />
-            <ResultsAnswer correct={this.props.correctAns===2? "yes" : null} answer={this.props.answers[2]} players={this.props.playersanswers[2]} />
-            <ResultsAnswer correct={this.props.correctAns===3? "yes" : null} answer={this.props.answers[3]} players={this.props.playersanswers[3]} />
+            <ResultsAnswer correct={this.props.correctAnswer===0? "yes" : null} answer={this.props.answers[0]} players={this.props.playerAnswers[0]} />
+            <ResultsAnswer correct={this.props.correctAnswer===1? "yes" : null} answer={this.props.answers[1]} players={this.props.playerAnswers[1]} />
+            <ResultsAnswer correct={this.props.correctAnswer===2? "yes" : null} answer={this.props.answers[2]} players={this.props.playerAnswers[2]} />
+            <ResultsAnswer correct={this.props.correctAnswer===3? "yes" : null} answer={this.props.answers[3]} players={this.props.playerAnswers[3]} />
         </div> );
     }
 }

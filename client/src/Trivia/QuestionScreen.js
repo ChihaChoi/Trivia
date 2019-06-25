@@ -24,13 +24,15 @@ class QuestionScreen extends Component {
         <div className="container">
             
             <Timer time={this.props.time} /> 
-            <div>selected answer is : {this.state.selected}</div>
+            
+            {/* update with correct catagory title */}
             <div className ="catagory title">General Nahlej</div>
+
             <div className = "question" dangerouslySetInnerHTML={{__html: this.props.question}}></div>
-            <AnswerButton number={0} answer={this.props.answers[0]} changeAnswer={this.changeAnswer.bind(this)}/>
-            <AnswerButton number={1} answer={this.props.answers[1]} changeAnswer={this.changeAnswer.bind(this)}/>
-            <AnswerButton number={2} answer={this.props.answers[2]} changeAnswer={this.changeAnswer.bind(this)}/>
-            <AnswerButton number={3} answer={this.props.answers[3]} changeAnswer={this.changeAnswer.bind(this)}/>
+            <AnswerButton answerNumber={0} answer={this.props.answers[0]} changeAnswer={this.changeAnswer.bind(this)}/>
+            <AnswerButton answerNumber={1} answer={this.props.answers[1]} changeAnswer={this.changeAnswer.bind(this)}/>
+            <AnswerButton answerNumber={2} answer={this.props.answers[2]} changeAnswer={this.changeAnswer.bind(this)}/>
+            <AnswerButton answerNumber={3} answer={this.props.answers[3]} changeAnswer={this.changeAnswer.bind(this)}/>
 
         </div>);
     }

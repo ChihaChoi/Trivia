@@ -8,9 +8,9 @@ class AnswerButton extends Component {
     render() { 
         return (             
         <div className = "answer-btn">
-            <input id={`answer${this.props.number}`} value={this.props.number} type="radio" name="answer" onChange={this.props.changeAnswer}/>
+            <input id={`answer${this.props.answerNumber}`} value={this.props.answerNumber} type="radio" name="answer" onChange={this.props.changeAnswer}/>
             <button className="btn">
-                <label dangerouslySetInnerHTML={{__html:this.props.answer }} htmlFor={`answer${this.props.number}`}>
+                <label dangerouslySetInnerHTML={{__html:this.props.answer }} htmlFor={`answer${this.props.answerNumber}`}>
                 </label>
             </button> 
         </div> );

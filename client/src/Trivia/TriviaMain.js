@@ -15,18 +15,23 @@ class TriviaMain extends Component {
             data:[],
             question:"" ,
             answers:["","","",""],
-            playersanswers:[[],[],[],[]],
+            playerAnswers:[[],[],[],[]],
         time:0 }
     }
+
+    //sliding page transition
     transition(page){
+        //transition state will create the transition animation component
         this.setState({  transition:"on" })
-        setTimeout(()=>{
-            this.setState({ transition: "off"})
-        },4000)
         setTimeout(()=>{
             this.setState ({currentScreen:page})
         },1000)
+        setTimeout(()=>{
+            this.setState({ transition: "off"})
+        },4000)
     }
+
+
     componentDidMount(){
         //set up initial questions and answers
         this.setState({
@@ -34,7 +39,7 @@ class TriviaMain extends Component {
             answers: this.props.answers
         })
 
-        //update trivia with a new question and a set of answers
+        //update trivia with a new question and a set of answers and transition to next page
         socket.on('question',(question, answers)=>{
             this.transition('questions');
             setTimeout(()=>{
@@ -45,21 +50,22 @@ class TriviaMain extends Component {
         })
 
         //update all players' answers and player scores
-        socket.on('answers',(data,correctAns)=>{
+        socket.on('answers',(data,correctAnswer)=>{
             this.transition('answers');
             setTimeout(()=>{
-                this.setState ({playersanswers:data, correctAns: correctAns}) //correct answer needs finishing
+                this.setState ({playerAnswers:data, correctAnswer: correctAnswer}) 
+                //correct answer needs finishing [old comment with bad semantics, need to remember how]
             },1000)
         })
         socket.on('playerData',(data)=>{
             this.setState({playerData:data})
             console.log('received')
         })
-        //timer update
+        //timer update [temporary function, move to timer component]
         socket.on('time',time=>this.setState({time:time}))
     }
 
-    //change mode buttons TEMP FUNCTION
+    //change mode buttons [temporary buttons for admin functionality]
     changeToQuestions(){
         this.transition('questions')
     }
@@ -73,7 +79,7 @@ class TriviaMain extends Component {
     render() { 
         let currentScreen = this.state.currentScreen
         return ( <div>
-            {/* temp buttons */}
+            {/* temporary buttons for admin functionality*/}
             <button onClick={this.changeToQuestions.bind(this)}>questions</button>
             <button onClick={this.changeToAnswers.bind(this)}>answers</button>
             <button onClick={this.changeToVoting.bind(this)}>voting</button>
@@ -93,9 +99,9 @@ class TriviaMain extends Component {
             currentScreen === "answers" ?
             <AnswerScreen 
                 question={this.state.question} 
-                correctAns={this.state.correctAns} 
+                correctAnswer={this.state.correctAnswer} 
                 answers={this.state.answers} 
-                playersanswers={this.state.playersanswers} 
+                playerAnswers={this.state.playerAnswers} 
             /> :
             <VotingScreen />}
         </div> );
