@@ -25,8 +25,8 @@ class QuestionScreen extends Component {
             
             <Timer /> 
             
-            {/* update with correct catagory title */}
-            <div className ="catagory title">General Nahlej</div>
+            {/* update with correct category title */}
+            <div className ="category title">{this.props.category}</div>
 
             <div className = "question" dangerouslySetInnerHTML={{__html: this.props.question}}></div>
             <AnswerButton answerNumber={0} answer={this.props.answers[0]} changeAnswer={this.changeAnswer.bind(this)}/>

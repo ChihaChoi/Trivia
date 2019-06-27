@@ -10,7 +10,7 @@ class AnswerScreen extends Component {
     render() { 
         return ( <div className="container">
             <Timer />
-            {/* <div className ="catagory title">General Nahlej</div> */}
+            <div className ="category title">{this.props.category}</div>
             <div className = "question" dangerouslySetInnerHTML={{__html: this.props.question}} ></div>
             <ResultsAnswer correct={this.props.correctAnswer===0? "yes" : null} answer={this.props.answers[0]} players={this.props.playerAnswers[0]} />
             <ResultsAnswer correct={this.props.correctAnswer===1? "yes" : null} answer={this.props.answers[1]} players={this.props.playerAnswers[1]} />

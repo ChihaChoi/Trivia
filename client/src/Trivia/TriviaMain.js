@@ -75,11 +75,13 @@ class TriviaMain extends Component {
             <ScoreButton  playerData={this.state.playerData} />
             {currentScreen === "questions" ?
             <QuestionScreen 
+            category={this.state.category}
             question={this.state.question} 
             answers={this.state.answers}
             /> :
             currentScreen === "answers" ?
             <AnswerScreen 
+                category={this.state.category}
                 question={this.state.question} 
                 correctAnswer={this.state.correctAnswer} 
                 answers={this.state.answers} 
