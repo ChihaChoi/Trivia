@@ -4,8 +4,9 @@ const request = require('request')
 var players = [];
 
 
-const roundLength = 20
+const answerLength = 6
 const questionLength = 14
+const animationLength = 3
 
 
 class Player{
@@ -23,15 +24,24 @@ class PlayerData{
         }}
 
 //global timer=============
-timer= 0
+var timer= 1
+var mode = 'question'
 setInterval(()=>{
-    timer++
-    if (timer > roundLength){
-        sendTrivia()
-        timer=0
-    } else if (timer === questionLength){
-        sendPlayerData()
-        sendPlayerAnswers()
+    timer--
+    if(timer < 0){
+
+        if (mode === 'question'){
+            sendTrivia()
+            
+            timer= questionLength + animationLength
+            mode = 'answer'
+        } else if (mode === 'answer'){
+            sendPlayerData()
+            sendPlayerAnswers()
+            
+            mode = 'question'
+            timer= answerLength + animationLength
+        }
     }
     io.emit('time',timer)
 },1000)
