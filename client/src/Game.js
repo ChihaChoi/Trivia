@@ -17,7 +17,7 @@ class Game extends Component {
     this.state = { 
       //set random theme
       color: this.props.colorClasses[Math.floor(Math.random()*this.props.colorClasses.length)],
-      screen: "",
+      screen: "login",
       number: 0
     }
   }
@@ -45,25 +45,15 @@ class Game extends Component {
 
 
   render() { 
-    //temp testing trivia comp, delete when required
-    return(<div className={"body "+this.state.color} >
-      {this.state.screen=== 'trivia' ?
-       <TriviaMain  question={this.state.question} answers={this.state.answers} category={this.state.category} /> :
-       <Login changeToWaiting={()=>{ this.setState({ waiting: "yes" })  }}/>
+
+    return(
+    <div className={"body "+this.state.color} >
+      {this.state.screen=== 'login' ?
+       <Login changeToWaiting={()=>{ this.setState({ waiting: "yes" })}}/> :
+       <TriviaMain  question={this.state.question} answers={this.state.answers} category={this.state.category} /> 
       }
     </div>
     )
-    //===========================
-
-    if(this.state.game === null){
-
-      return( <div className={"body "+this.state.color}>
-         <Login onSubmit={this.handleSubmit.bind(this)} /> 
-         {this.state.screen ==="transition"? <Transition_SlideLeft newTheme="theme-purple" />: ""}
-      </div> )
-      } else if(this.state.game === "trivia") {
-        return( <TriviaMain />)
-      }
   }
 }
 export default Game;
