@@ -7,10 +7,10 @@ class WaitingScreen extends Component {
         this.state = {  }
     }
     render() { 
-        return ( <div>
+        return ( 
+        <div className="container">
+            <h1>Next round starts in </h1>
             <Timer />
-            <h1> WAITING....</h1>
-
         </div> );
     }
 }
