@@ -25,12 +25,13 @@ class Game extends Component {
 
   componentDidMount(){
   //write question and answers to state once received from server
-  socket.on('question',(question,answers)=>{
+  socket.on('question',(question, answers, category)=>{
     if(this.state.waiting){
       this.setState({ 
         screen : "trivia",
         question: question,
-        answers: answers
+        answers: answers,
+        category: category
     })
     }
   })
@@ -47,7 +48,7 @@ class Game extends Component {
     //temp testing trivia comp, delete when required
     return(<div className={"body "+this.state.color} >
       {this.state.screen=== 'trivia' ?
-       <TriviaMain  question={this.state.question} answers={this.state.answers} /> :
+       <TriviaMain  question={this.state.question} answers={this.state.answers} category={this.state.category} /> :
        <Login changeToWaiting={()=>{ this.setState({ waiting: "yes" })  }}/>
       }
     </div>

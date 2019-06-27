@@ -120,6 +120,7 @@ function sendTrivia(){
                 //splits the api data into question and answers
                 let parsedData = JSON.parse(body);
                 let data = parsedData.results;
+                let category = parsedData.category;
 
                 let question = data[0].question;
                 var answers = data[0].incorrect_answers;
@@ -127,7 +128,7 @@ function sendTrivia(){
                 //insert correct answer randomly into list of answers
                 answers.splice(correctAnswer,0,data[0].correct_answer)
                 
-                io.emit('question',question, answers)
+                io.emit('question',question, answers, category)
                 console.log(question)
                 
             }
