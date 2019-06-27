@@ -35,17 +35,19 @@ class TriviaMain extends Component {
         //set up initial questions and answers
         this.setState({
             question:this.props.question,
-            answers: this.props.answers
+            answers: this.props.answers,
+            category: this.props.category
         })
 
         //update trivia with a new question and a set of answers and transition to next page
-        socket.on('question',(question, answers)=>{
+        socket.on('question',(question, answers, category)=>{
             this.transition('questions');
             setTimeout(()=>{
                 this.setState ({ question:question, 
-                    answers:answers
+                    answers:answers,
+                    category: category
                     })
-            },1000)
+            },1000) //1000 is length of initial stage transition
         })
 
         //update all players' answers and player scores
