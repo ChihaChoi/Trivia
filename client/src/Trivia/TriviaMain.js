@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import QuestionScreen from './QuestionScreen'
 import AnswerScreen from './AnswerScreen'
-import VotingScreen from './VotingScreen'
 import ScoreButton from './ScoreButton.js'
 import socket from '../socket'
 import Transition_SlideLeft from '../transitions/Transition_SlideLeft';
@@ -63,26 +62,10 @@ class TriviaMain extends Component {
         })
     }
 
-    //change mode buttons [temporary buttons for admin functionality]
-    changeToQuestions(){
-        this.transition('questions')
-    }
-    changeToAnswers(){
-        this.transition('answers')
-    }
-    changeToVoting(){
-        this.transition('voting')
-    }
-    //=====================
+
     render() { 
         let currentScreen = this.state.currentScreen
         return ( <div>
-            {/* temporary buttons for admin functionality*/}
-            <button onClick={this.changeToQuestions.bind(this)}>questions</button>
-            <button onClick={this.changeToAnswers.bind(this)}>answers</button>
-            <button onClick={this.changeToVoting.bind(this)}>voting</button>
-            {/* //================== */}
-
             {/* Transition layer */}
             {this.state.transition==="on"? <Transition_SlideLeft newTheme="theme-blue" /> : ""}
 
@@ -100,7 +83,7 @@ class TriviaMain extends Component {
                 answers={this.state.answers} 
                 playerAnswers={this.state.playerAnswers} 
             /> :
-            <VotingScreen />}
+            ""}
         </div> );
     }
 }
