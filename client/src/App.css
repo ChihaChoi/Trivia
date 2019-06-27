@@ -264,7 +264,8 @@ label {
   background-color: white;
   margin-top: 0;
   align-items: center;
-  align-content: center; }
+  align-content: center;
+  z-index: 900; }
   .scoreScreen__playerInfo {
     color: red;
     text-align: center; }
