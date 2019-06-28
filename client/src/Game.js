@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import './App.css'
 import socket from './socket'
-import Login from './Login'
+import Login from './Login/Login'
 import Transition_SlideLeft from './transitions/Transition_SlideLeft'
 import TriviaMain from './Trivia/TriviaMain';
 

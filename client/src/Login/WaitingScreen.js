@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Timer from './Timer'
+import Timer from '../Timer'
 
 class WaitingScreen extends Component {
     constructor(props) {

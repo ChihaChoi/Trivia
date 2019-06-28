@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import socket from './socket'
+import socket from '../socket'
 
 class LoginScreen extends Component {
     constructor(props) {
