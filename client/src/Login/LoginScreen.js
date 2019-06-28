@@ -17,7 +17,7 @@ class LoginScreen extends Component {
 
     //upload name and photo to server
     uploadHandler = () => {
-        //set callback to make setState sync
+        //set callback to make setState sync to socket.emit
         window.playerName = this.state.textInput
         this.setState({
             playerName: this.state.textInput, 
