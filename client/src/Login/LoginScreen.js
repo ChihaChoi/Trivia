@@ -33,7 +33,7 @@ class LoginScreen extends Component {
       }
     render() { 
         return ( 
-        <div className="container">
+        <div className="container login-screen">
             <img className="avatar" src={this.state.selectedFile}/>
             <input id="upload" type="file" ref={(ref) => { this.uploadInput = ref; }} onChange={this.fileChangedHandler}/>
             <label class="btn" for="upload">Choose Image</label>

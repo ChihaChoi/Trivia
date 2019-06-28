@@ -179,21 +179,26 @@ input[type="radio"] {
   max-width: 70vw;
   border: none;
   margin-bottom: 2rem;
-  padding: 1rem;
   border-radius: 4px;
   color: white;
-  transition: transform 0.1s;
-  display: flex;
-  align-content: stretch;
-  align-items: stretch; }
+  transition: transform 0.1s; }
   .btn:active {
     transform: translateY(2px); }
 
-label {
-  width: 100%; }
+.login-screen .btn {
+  padding: 1rem; }
+  .login-screen .btn.submit {
+    font-size: 3rem; }
 
-.submit.btn {
-  font-size: 3rem; }
+.answer-btn .btn {
+  display: flex;
+  align-content: stretch;
+  align-items: stretch;
+  padding: 0; }
+  .answer-btn .btn label {
+    width: 100%;
+    height: 100%;
+    padding: 1rem; }
 
 #upload {
   position: fixed; }
