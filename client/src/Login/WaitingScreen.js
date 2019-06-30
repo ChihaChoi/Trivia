@@ -10,7 +10,7 @@ class WaitingScreen extends Component {
         return ( 
         <div className="container">
             <h1>Next round starts in </h1>
-            <Timer />
+            <Timer mode="waiting"/>
         </div> );
     }
 }

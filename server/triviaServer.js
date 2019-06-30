@@ -30,20 +30,20 @@ setInterval(()=>{
     timer--
     if(timer < 0){
 
-        if (mode === 'question'){
+        if (mode === 'answer'){
             sendTrivia()
             
             timer= questionLength + animationLength
-            mode = 'answer'
-        } else if (mode === 'answer'){
+            mode = 'question'
+        } else if (mode === 'question'){
             sendPlayerData()
             sendPlayerAnswers()
             
-            mode = 'question'
+            mode = 'answer'
             timer= answerLength + animationLength
         }
     }
-    io.emit('time',timer)
+    io.emit('time',timer,mode)
 },1000)
 //=========================
 
