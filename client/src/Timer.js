@@ -27,7 +27,7 @@ class Timer extends Component {
                         } else {
                             this.setState({time:time + answerRoundLength})
                         }
-                    },mn
+                    }
                 } else {   
                 //set max timer for countdown animation
                 if(this.state.maxTime === null){
