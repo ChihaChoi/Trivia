@@ -235,7 +235,9 @@ input[type="radio"] {
 
 .timer {
   color: white;
-  font-size: 2rem; }
+  font-size: 2rem;
+  width: 100px;
+  height: 100px; }
 
 .score__checkbox {
   visibility: hidden; }
