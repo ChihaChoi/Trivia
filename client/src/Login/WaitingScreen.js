@@ -8,8 +8,8 @@ class WaitingScreen extends Component {
     }
     render() { 
         return ( 
-        <div className="container">
-            <h1>Next round starts in </h1>
+        <div className="container waitingScreen">
+            <h1 className="waiting--title">Next round starts in </h1>
             <Timer mode="waiting"/>
         </div> );
     }

@@ -54,7 +54,7 @@ class Timer extends Component {
             strokeLinecap: 'butt',
          
             // Text size
-            textSize: '16px',
+            textSize: '28px',
          
             // How long animation takes to go from one percentage to another, in seconds
             pathTransitionDuration: 1,
