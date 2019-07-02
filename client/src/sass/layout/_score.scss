@@ -46,4 +46,13 @@
     // width:100%;
     color:red;
     text-align: center;
+
+    &__avatar{
+        width:5vh;
+        height:5vh;
+        align-items: center;
+        border-radius:50%;
+        object-fit: cover;
+        margin-bottom: 2vh;
+    }
 }

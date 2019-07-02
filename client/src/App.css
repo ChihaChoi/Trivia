@@ -280,3 +280,10 @@ input[type="radio"] {
 .playerInfo {
   color: red;
   text-align: center; }
+  .playerInfo__avatar {
+    width: 5vh;
+    height: 5vh;
+    align-items: center;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 2vh; }
