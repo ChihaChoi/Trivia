@@ -21,11 +21,12 @@ class ScoreScreen extends Component {
             {this.props.playerData?
             this.props.playerData.map((ele,i)=>{ return (
                 <div className="playerInfo" > 
-                    <div> {ele.name} </div>
-                    <div> {ele.score} </div>
-
                     {/* Currently uncompressed, finish in LoginScreen.js */}
                     <img className="playerInfo__avatar"src={this.bufferToURL(ele.photo)} />
+                    <div className="playerInfo__name"> {ele.name} </div>
+                    <div className="playerInfo__score"> {ele.score} </div>
+                    <hr className="playerInfo__line" />
+
                 </div>
                 
                 )}) :

@@ -29,6 +29,7 @@
 .scoreScreen{
     position:fixed;
     top:0;
+    padding-top:10vh;
     width:100vw;
     height:100vh;
     display: flex;
@@ -43,16 +44,40 @@
     
 }
 .playerInfo{
-    // width:100%;
+    width:60%;
+    font-size:2rem;
     color:red;
     text-align: center;
 
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+
     &__avatar{
-        width:5vh;
-        height:5vh;
+        width:10%;
+        height:auto;
         align-items: center;
         border-radius:50%;
         object-fit: cover;
-        margin-bottom: 2vh;
+    }
+    &__name{
+        width:80%;
+    }
+    &__score{
+        width:10%;
+    }
+    //need to remove hr on last child
+    // &:last-child{
+    //     &__line{
+    //         visibility: hidden;
+    //     }
+    // }
+    &__line{
+        color:red;
+        width:70%;
+        margin: 8px;
     }
 }

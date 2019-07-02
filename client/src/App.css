@@ -267,6 +267,7 @@ input[type="radio"] {
 .scoreScreen {
   position: fixed;
   top: 0;
+  padding-top: 10vh;
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -278,12 +279,26 @@ input[type="radio"] {
   z-index: 900; }
 
 .playerInfo {
+  width: 60%;
+  font-size: 2rem;
   color: red;
-  text-align: center; }
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center; }
   .playerInfo__avatar {
-    width: 5vh;
-    height: 5vh;
+    width: 10%;
+    height: auto;
     align-items: center;
     border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 2vh; }
+    object-fit: cover; }
+  .playerInfo__name {
+    width: 80%; }
+  .playerInfo__score {
+    width: 10%; }
+  .playerInfo__line {
+    color: red;
+    width: 70%;
+    margin: 8px; }
