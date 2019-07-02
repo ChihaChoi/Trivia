@@ -49,7 +49,7 @@ To connect to the client using your mobile device, type your IPv4 Address into y
   * Compress avatar before uploading
   * only one person can login to the same name at once (currently multiple users can log onto the same name to contribute score)
   * ~~add timer to waiting screen~~
-  * fix timers
+  * ~~fix timers~~
   * ~~add category name to question page~~
   * pull max number (50) of questions from api and store in server rather than once every question
 
@@ -58,7 +58,7 @@ To connect to the client using your mobile device, type your IPv4 Address into y
   * results screen
   * buttons on question page
   * transition animations
-  * timer animation
+  * ~~timer animation~~
 
 ### Optional Features
   * player connection status on score screen
