@@ -18,20 +18,12 @@ class ScoreScreen extends Component {
 
             {this.props.playerData?
             this.props.playerData.map((ele,i)=>{ return (
-                <div className="scoreScreen__playerInfo" > 
+                <div className="playerInfo" > 
                     <div> {ele.name} </div>
                     <div> {ele.score} </div>
 
                     {/* Currently uncompressed, finish in LoginScreen.js */}
-                    <img src={this.bufferToURL(ele.photo)} />
-
-
-
-                    {/* <img src={'data:image/jpeg;base64,' + buf.toString('base64')} /> */}
-
-                    {/* var blob = new Blob( [ arrayBufferView ], { type: "image/jpeg" } );
-                    var urlCreator = window.URL || window.webkitURL;
-                    var imageUrl = urlCreator.createObjectURL( blob ); */}
+                    <img className="playerInfo__avatar"src={this.bufferToURL(ele.photo)} />
                 </div>
                 
                 )}) :

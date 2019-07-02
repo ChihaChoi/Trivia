@@ -276,6 +276,7 @@ input[type="radio"] {
   align-items: center;
   align-content: center;
   z-index: 900; }
-  .scoreScreen__playerInfo {
-    color: red;
-    text-align: center; }
+
+.playerInfo {
+  color: red;
+  text-align: center; }
