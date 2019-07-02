@@ -62,7 +62,10 @@ io.on('connection',(socket)=>{
             findName(playerName,players).photo=playerPhoto;
         }
         //update all clients' player list after every new player submission
-        sendPlayerData()
+        setInterval(()=>{
+            sendPlayerData()
+            //[duct tape fix] wait for 1 second for TriviaMain to load and receive player data
+        },1000)
 
         //lists all logged players in console
         players.forEach((ele,i)=>{
