@@ -11,6 +11,8 @@ class ScoreScreen extends Component {
             var urlCreator = window.URL || window.webkitURL;
             var imageUrl = urlCreator.createObjectURL( blob );
             return imageUrl
+        } else {
+            return require('../default_avatar.png')
         }
     }
     render() { 

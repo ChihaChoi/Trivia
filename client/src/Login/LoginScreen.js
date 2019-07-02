@@ -4,7 +4,7 @@ import socket from '../socket'
 class LoginScreen extends Component {
     constructor(props) {
         super(props);
-        this.state ={ textInput: "", playerName: "Your Name", selectedFile:require('./default_avatar.png') }
+        this.state ={ textInput: "", playerName: "Your Name", selectedFile:require('../default_avatar.png') }
 
     }
 
@@ -12,9 +12,7 @@ class LoginScreen extends Component {
         this.setState({textInput: evt.target.value})
       }
     fileChangedHandler = event => {
-        this.setState({ selectedFile: URL.createObjectURL(this.uploadInput.files[0]),
-        
-        blob: this.uploadInput.files[0]})
+        this.setState({ selectedFile: URL.createObjectURL(this.uploadInput.files[0])})
     }
 
     //upload name and photo to server
