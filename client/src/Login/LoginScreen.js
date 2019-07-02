@@ -12,13 +12,18 @@ class LoginScreen extends Component {
         this.setState({textInput: evt.target.value})
       }
     fileChangedHandler = event => {
-        this.setState({ selectedFile: URL.createObjectURL(event.target.files[0]) })
+        this.setState({ selectedFile: URL.createObjectURL(this.uploadInput.files[0]),
+        
+        blob: this.uploadInput.files[0]})
     }
 
     //upload name and photo to server
     uploadHandler = () => {
         //set callback to make setState sync to socket.emit
+
+        //set playername as global variable for when they reconnect
         window.playerName = this.state.textInput
+
         this.setState({
             playerName: this.state.textInput, 
             textInput:""},
