@@ -71,22 +71,22 @@ class TriviaMain extends Component {
             {/* Transition layer */}
             {this.state.transition==="on"? <Transition_SlideLeft newTheme="theme-blue" /> : ""}
 
-
             <ScoreButton  playerData={this.state.playerData} />
+
             {currentScreen === "questions" ?
-            <QuestionScreen 
-            category={this.state.category}
-            question={this.state.question} 
-            answers={this.state.answers}
-            /> :
+                <QuestionScreen 
+                    category={this.state.category}
+                    question={this.state.question} 
+                    answers={this.state.answers}
+                /> :
             currentScreen === "answers" ?
-            <AnswerScreen 
-                category={this.state.category}
-                question={this.state.question} 
-                correctAnswer={this.state.correctAnswer} 
-                answers={this.state.answers} 
-                playerAnswers={this.state.playerAnswers} 
-            /> :
+                <AnswerScreen 
+                    category={this.state.category}
+                    question={this.state.question} 
+                    correctAnswer={this.state.correctAnswer} 
+                    answers={this.state.answers} 
+                    playerAnswers={this.state.playerAnswers} 
+                /> :
             ""}
         </div> );
     }
