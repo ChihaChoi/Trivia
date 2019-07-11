@@ -24,10 +24,10 @@ class TriviaMain extends Component {
         this.setState({  transition:"on" })
         setTimeout(()=>{
             this.setState ({currentScreen:page})
-        },1000)
+        },1000) //1000 is length of initial stage transition
         setTimeout(()=>{
             this.setState({ transition: "off"})
-        },4000)
+        },4000) //4000 is full length of stage transition
     }
 
 
