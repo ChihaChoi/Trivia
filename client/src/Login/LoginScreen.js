@@ -38,9 +38,9 @@ class LoginScreen extends Component {
         return ( 
         <div className="container login-screen">
             <img className="avatar" src={this.state.selectedFile}/>
-            <input id="upload" type="file" ref={(ref) => { this.uploadInput = ref; }} onChange={this.fileChangedHandler}/>
+            <input id="upload" type="file" ref={(ref) => { this.uploadInput = ref; }}  onChange={this.fileChangedHandler}/>
             <label class="btn" for="upload">Choose Image</label>
-            <input type="text" className="input"  value={this.state.textInput} onChange={this.handleChange.bind(this)} placeholder={this.state.playerName}/>
+            <input type="text" className="input"  value={this.state.textInput} maxLength="10" onChange={this.handleChange.bind(this)} placeholder={this.state.playerName}/>
 
             <button className="submit btn" onClick={this.uploadHandler.bind(this)}>SUBMIT!</button>
         </div>
