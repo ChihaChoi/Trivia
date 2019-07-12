@@ -11,16 +11,20 @@ class ResultsAnswer extends Component {
     render() { 
         return ( 
         <div className={(this.props.correct? 'results__container--correct ' : ``)  +"results__container"}>
-            <div className= {"results__answer"}>
-                {this.props.answer}
-                {this.props.correct? "YESSSS":""} 
-                {/* format properly */}
-            </div>
+            <div
+                className= {"results__answer"}
+                dangerouslySetInnerHTML={{__html:this.props.answer}}
+            ></div>
+                {this.props.correct? 
+                    <div className="results__plusOne">+1</div>
+                    :""} 
             <div className="results__players">
                 {/* lists each player that chose the answer */}
                 {this.props.players.map((ele,i)=>{
                     return(
-                        <div className="results__players--player">{ele}</div>
+                        <div className={(ele===window.playerName? 'results__players__player--active': '' ) +" results__players__player"}>
+                        {ele===window.playerName? 'YOU!! :)' : ele}
+                        </div>
                     )
                 })}
             </div>

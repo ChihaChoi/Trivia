@@ -38,33 +38,49 @@ input[type="radio"]{
           background: white;
           color: color($color, button)
         }
-        & .results__players--player{
+        & .results__players__player{
           font-weight: 600;
 
           background: white;
-          color: color($color, button)
+          color: color($color, button);
+          &--active{
+            background: color($color, button);
+            color: white;
+          border: solid 3px white;
+          }
+        }
+        & .results__plusOne{
+          color: color($color, button);
         }
       }
       .results__answer{
         background: color($color, button)
       }
-      .results__players--player{
+      .results__players__player{
         background: color($color, button);
         border: 3px solid color($color, base);
+        &--active{
+          // background: white;
+          // color: color($color, button);
+          border: solid 3px white;
+        }
       }
 
       .btn{
-        transition: all 0.5s, transform 0.03s,;
+        transition: all 0.3s, transform 0.03s,;
       
         background: color($color,button);
         &:active{
+
             background: color($color,button-active);
-            background: red;
+            
         }
       }
       input[type="radio"]:checked~.btn { 
-        background-color:color($color,button-active);
-        border: solid white 5px;
+        // background-color:color($color,button-active);
+        // border: solid white 5px;
+          background: white;
+          color: color($color, button)
        }
     }
   }

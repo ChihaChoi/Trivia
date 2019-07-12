@@ -25,23 +25,27 @@ class ScoreScreen extends Component {
             return require('../default_avatar.png')
         }
     }
-    randomColor(){
-        // let color = {
-            // backgroundColor: `${this.props.colors[Math.floor(Math.random()*this.props.colors.length)]}`,
-        // }
+    randomColor(j){
+        while(j>this.props.colors.length){
+            j=j-this.props.colors.length
+        }
+        let color = {
+            backgroundColor: `${this.props.colors[j]}`,
+        }
+        return color;
         
     }
     render() { 
         return(<div className="scoreScreen">
             {this.props.playerData?
-            this.props.playerData.map((ele,i)=>{ return (
-                <div className="playerInfo" > 
+            this.props.playerData.map((ele,i)=>{ 
+                
+                return (
+                <div className="playerInfo" style={this.randomColor(i)}> 
                     {/* Currently uncompressed, finish in LoginScreen.js */}
                     <img className="playerInfo__avatar"src={this.bufferToURL(ele.photo)} />
                     <div className="playerInfo__name"> {ele.name} </div>
                     <div className="playerInfo__score"> {ele.score} </div>
-                    <hr className="playerInfo__line" />
-
                 </div>
                 
                 )}) :
