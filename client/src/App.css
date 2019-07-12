@@ -1,6 +1,19 @@
 * {
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Safari */
+  -khtml-user-select: none;
+  /* Konqueror HTML */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
+  /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */ }
 
 html {
   font-size: 62.5%; }
@@ -14,11 +27,11 @@ html {
 
 .title {
   font-weight: 900;
-  font-size: 4rem;
-  margin: 2rem; }
+  font-size: 3rem;
+  margin: 1.5rem; }
 
 .question {
-  font-size: 2rem;
+  font-size: 1.5rem;
   width: 80vw;
   margin-bottom: 1rem; }
 
@@ -77,6 +90,11 @@ input[type="radio"] {
 
 .theme-red {
   background: #b62626; }
+  .theme-red .results__answer {
+    background: #791212; }
+  .theme-red .results__players--player {
+    background: #791212;
+    border: 3px solid #b62626; }
   .theme-red .btn {
     transition: all 0.5s, transform 0.03s;
     background: #791212; }
@@ -89,6 +107,11 @@ input[type="radio"] {
 
 .theme-green {
   background: #108b3f; }
+  .theme-green .results__answer {
+    background: #084921; }
+  .theme-green .results__players--player {
+    background: #084921;
+    border: 3px solid #108b3f; }
   .theme-green .btn {
     transition: all 0.5s, transform 0.03s;
     background: #084921; }
@@ -101,6 +124,11 @@ input[type="radio"] {
 
 .theme-blue {
   background: #104e8b; }
+  .theme-blue .results__answer {
+    background: #0a325a; }
+  .theme-blue .results__players--player {
+    background: #0a325a;
+    border: 3px solid #104e8b; }
   .theme-blue .btn {
     transition: all 0.5s, transform 0.03s;
     background: #0a325a; }
@@ -113,6 +141,11 @@ input[type="radio"] {
 
 .theme-purple {
   background: #6e1567; }
+  .theme-purple .results__answer {
+    background: #460d41; }
+  .theme-purple .results__players--player {
+    background: #460d41;
+    border: 3px solid #6e1567; }
   .theme-purple .btn {
     transition: all 0.5s, transform 0.03s;
     background: #460d41; }
@@ -126,33 +159,32 @@ input[type="radio"] {
 .results__container {
   position: relative;
   overflow: visible;
-  margin-top: 3rem;
-  margin-bottom: 3rem; }
+  margin-top: 2rem;
+  margin-bottom: 2rem; }
   .results__container:last-child {
     margin-bottom: 5rem; }
 
 .results__answer {
-  font-size: 1.6rem;
+  font-size: 1.2rem;
   background-color: blueviolet;
   width: 80vw;
   border-radius: 5px;
-  padding: 1.5rem;
-  padding-bottom: 3rem; }
+  padding: 1rem;
+  padding-bottom: 2rem; }
 
 .results__players {
   position: absolute;
-  top: 6rem;
+  top: 3rem;
   left: 1rem;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   overflow: visible; }
   .results__players--player {
-    font-size: 2rem;
+    font-size: 1.2rem;
     padding: 0.5rem 1.5rem;
     border-radius: 100rem;
-    background-color: red;
-    transform: rotate(45deg); }
+    background-color: red; }
 
 .container.waitingScreen {
   position: absolute;
@@ -177,7 +209,7 @@ input[type="radio"] {
   margin-top: 3rem; }
 
 .btn {
-  font-size: 1.6rem;
+  font-size: 1.2rem;
   min-width: 70vw;
   max-width: 70vw;
   border: none;
@@ -209,7 +241,7 @@ input[type="radio"] {
 .container {
   width: 100%;
   position: absolute;
-  top: 5vh;
+  top: 2vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -279,26 +311,28 @@ input[type="radio"] {
   z-index: 900; }
 
 .playerInfo {
-  width: 60%;
+  width: 100%;
   font-size: 2rem;
-  color: red;
   text-align: center;
+  background-color: #003585;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: center; }
+  justify-content: center;
+  padding-bottom: 5px;
+  padding-top: 5px; }
   .playerInfo__avatar {
+    margin-left: 10%;
     width: 10%;
     height: auto;
     align-items: center;
     border-radius: 50%;
     object-fit: cover; }
   .playerInfo__name {
-    width: 80%; }
+    width: 60%; }
   .playerInfo__score {
-    width: 10%; }
+    width: 20%; }
   .playerInfo__line {
-    color: red;
-    width: 70%;
-    margin: 8px; }
+    color: transparent;
+    width: 70%; }

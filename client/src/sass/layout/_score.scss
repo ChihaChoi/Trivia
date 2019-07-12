@@ -44,19 +44,23 @@
     
 }
 .playerInfo{
-    width:60%;
+    width:100%;
     font-size:2rem;
-    color:red;
+    // color:red;
     text-align: center;
 
-
+    // background-image: linear-gradient(rgb(128, 126, 243),rgb(47, 45, 173));
+    background-color: rgb(0, 53, 133);
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+    padding-bottom: 5px;
+    padding-top: 5px;
 
     &__avatar{
+        margin-left: 10%;
         width:10%;
         height:auto;
         align-items: center;
@@ -64,10 +68,10 @@
         object-fit: cover;
     }
     &__name{
-        width:80%;
+        width:60%;
     }
     &__score{
-        width:10%;
+        width:20%;
     }
     //need to remove hr on last child
     // &:last-child{
@@ -76,8 +80,8 @@
     //     }
     // }
     &__line{
-        color:red;
+        color:transparent;
         width:70%;
-        margin: 8px;
+        // margin: 8px;
     }
 }

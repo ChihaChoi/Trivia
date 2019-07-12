@@ -3,7 +3,17 @@ import React, { Component } from 'react';
 class ScoreScreen extends Component {
     constructor(props) {
         super(props);
+        
         this.state = {  }
+    }
+    static defaultProps ={
+        colors : [
+        '#013644',
+        '#8f1a1d',
+        '#d3623a',
+        '#fba92e',
+        '#008a93'
+        ]
     }
     bufferToURL(buffer){
         if(buffer){
@@ -15,9 +25,14 @@ class ScoreScreen extends Component {
             return require('../default_avatar.png')
         }
     }
+    randomColor(){
+        // let color = {
+            // backgroundColor: `${this.props.colors[Math.floor(Math.random()*this.props.colors.length)]}`,
+        // }
+        
+    }
     render() { 
         return(<div className="scoreScreen">
-
             {this.props.playerData?
             this.props.playerData.map((ele,i)=>{ return (
                 <div className="playerInfo" > 
@@ -38,3 +53,4 @@ class ScoreScreen extends Component {
 }
  
 export default ScoreScreen;
+

@@ -19,6 +19,8 @@ input[type="radio"]{
   visibility: hidden;
 }
 
+
+//need to move to a more appropriate file inline with 7>1 practices
 @each $color in $list{
     .theme-#{$color}{
       background: color($color);
@@ -29,14 +31,22 @@ input[type="radio"]{
       // & *::placeholder{
       //   color: rgba(color($color,button-active),0.5)
       // }
+      .results__answer{
+        background: color($color, button)
+      }
+      .results__players--player{
+        background: color($color, button);
+        border: 3px solid color($color, base);
+      }
+
       .btn{
-    transition: all 0.5s, transform 0.03s,;
-        
-          background: color($color,button);
-          &:active{
-              background: color($color,button-active);
-              background: red;
-          }
+        transition: all 0.5s, transform 0.03s,;
+      
+        background: color($color,button);
+        &:active{
+            background: color($color,button-active);
+            background: red;
+        }
       }
       input[type="radio"]:checked~.btn { 
         background-color:color($color,button-active);
