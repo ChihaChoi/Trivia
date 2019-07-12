@@ -8,6 +8,16 @@
         opacity: 0;
     }
 }
+@keyframes fadeIn {
+    from {
+        transform: translateY(2rem)
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0)
+    }
+}
+
 .trans--slideLeft{
     height:100vh;
     width:200vw;

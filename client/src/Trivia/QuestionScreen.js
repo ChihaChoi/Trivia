@@ -29,10 +29,12 @@ class QuestionScreen extends Component {
             <div className ="category title">{this.props.category}</div>
 
             <div className = "question" dangerouslySetInnerHTML={{__html: this.props.question}}></div>
-            <AnswerButton answerNumber={0} answer={this.props.answers[0]} changeAnswer={this.changeAnswer.bind(this)}/>
-            <AnswerButton answerNumber={1} answer={this.props.answers[1]} changeAnswer={this.changeAnswer.bind(this)}/>
-            <AnswerButton answerNumber={2} answer={this.props.answers[2]} changeAnswer={this.changeAnswer.bind(this)}/>
-            <AnswerButton answerNumber={3} answer={this.props.answers[3]} changeAnswer={this.changeAnswer.bind(this)}/>
+            <div>
+                <AnswerButton answerNumber={0} answer={this.props.answers[0]} changeAnswer={this.changeAnswer.bind(this)}/>
+                <AnswerButton answerNumber={1} answer={this.props.answers[1]} changeAnswer={this.changeAnswer.bind(this)}/>
+                <AnswerButton answerNumber={2} answer={this.props.answers[2]} changeAnswer={this.changeAnswer.bind(this)}/>
+                <AnswerButton answerNumber={3} answer={this.props.answers[3]} changeAnswer={this.changeAnswer.bind(this)}/>
+            </div>
 
         </div>);
     }

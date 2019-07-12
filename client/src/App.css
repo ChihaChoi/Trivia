@@ -43,6 +43,13 @@ html {
   to {
     opacity: 0; } }
 
+@keyframes fadeIn {
+  from {
+    transform: translateY(2rem); }
+  to {
+    opacity: 1;
+    transform: translateX(0); } }
+
 .trans--slideLeft {
   height: 100vh;
   width: 200vw;
@@ -220,9 +227,20 @@ input[type="radio"] {
   position: relative;
   overflow: visible;
   margin-top: 2rem;
-  margin-bottom: 2.5rem; }
+  margin-bottom: 2.5rem;
+  opacity: 0;
+  animation: fadeIn forwards;
+  animation-duration: 1s; }
   .results__container:last-child {
     margin-bottom: 5rem; }
+  .results__container:nth-of-type(1) {
+    animation-delay: 2s; }
+  .results__container:nth-of-type(2) {
+    animation-delay: 2.2s; }
+  .results__container:nth-of-type(3) {
+    animation-delay: 2.4s; }
+  .results__container:nth-of-type(4) {
+    animation-delay: 2.6s; }
 
 .results__answer {
   font-size: 1.2rem;
@@ -305,6 +323,19 @@ input[type="radio"] {
     width: 100%;
     height: 100%;
     padding: 1.5rem; }
+
+.answer-btn {
+  opacity: 0;
+  animation: fadeIn forwards;
+  animation-duration: 1s; }
+  .answer-btn:nth-of-type(1) {
+    animation-delay: 2s; }
+  .answer-btn:nth-of-type(2) {
+    animation-delay: 2.2s; }
+  .answer-btn:nth-of-type(3) {
+    animation-delay: 2.4s; }
+  .answer-btn:nth-of-type(4) {
+    animation-delay: 2.6s; }
 
 #upload {
   position: fixed; }
