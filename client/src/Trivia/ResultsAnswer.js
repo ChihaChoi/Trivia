@@ -10,8 +10,8 @@ class ResultsAnswer extends Component {
     }
     render() { 
         return ( 
-        <div className="results__container">
-            <div className="results__answer">
+        <div className={(this.props.correct? 'results__container--correct ' : ``)  +"results__container"}>
+            <div className= {"results__answer"}>
                 {this.props.answer}
                 {this.props.correct? "YESSSS":""} 
                 {/* format properly */}

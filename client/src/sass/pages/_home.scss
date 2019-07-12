@@ -31,6 +31,20 @@ input[type="radio"]{
       // & *::placeholder{
       //   color: rgba(color($color,button-active),0.5)
       // }
+
+      .results__container--correct{
+        & .results__answer{
+          font-weight: 600;
+          background: white;
+          color: color($color, button)
+        }
+        & .results__players--player{
+          font-weight: 600;
+
+          background: white;
+          color: color($color, button)
+        }
+      }
       .results__answer{
         background: color($color, button)
       }

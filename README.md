@@ -55,7 +55,7 @@ To connect to the client using your mobile device, type your IPv4 Address into y
 
 ### Styling
   * score screen
-  * results screen
+  * ~~results screen~~
   * buttons on question page
   * transition animations
   * ~~timer animation~~
