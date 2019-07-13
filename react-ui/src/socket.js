@@ -1,12 +1,12 @@
 import io from 'socket.io-client'
 
-
-var socket = io('localhost:8081/')
+var PORT = 8081
+var socket = io(`localhost:${process.env.PORT || PORT}/`)
 
 var ipv4Address = null
 
 if (ipv4Address){
-    socket = io(`${ipv4Address}:8081`)
+    socket = io(`${ipv4Address}:${PORT}`)
 }
 
 
