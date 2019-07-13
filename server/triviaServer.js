@@ -204,3 +204,14 @@ if (!isDev && cluster.isMaster) {
   });
 }
 
+const express = require('express');
+const path = require('path');
+const app = express();
+
+app.use(express.static(path.join(__dirname, '../react-ui/build')));
+
+app.get('/', function(req, res) {
+  res.sendFile(path.join(__dirname, '../react-ui/build', 'index.html'));
+});
+
+app.listen(9000);
