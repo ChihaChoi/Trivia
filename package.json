@@ -1,0 +1,19 @@
+{
+  "name": "trivia",
+  "version": "1.0.0",
+  "description": "This trivia game uses React for the front-end and node.js for the server. Using Socket.io, all the devices connected to the server see the same questions and answers in real time and can compete against each other using the real time score tracker.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ChihaChoi/Trivia.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ChihaChoi/Trivia/issues"
+  },
+  "homepage": "https://github.com/ChihaChoi/Trivia#readme"
+}
