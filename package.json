@@ -4,7 +4,7 @@
   "description": "This trivia game uses React for the front-end and node.js for the server. Using Socket.io, all the devices connected to the server see the same questions and answers in real time and can compete against each other using the real time score tracker.",
   "main": "index.js",
   "scripts": {
-    "start": "node triviaServer",
+    "start": "node server/triviaServer",
     "build": "cd react-ui/ && npm install && npm run build"
   },
 
