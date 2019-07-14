@@ -1,25 +1,17 @@
 const request = require('request');
-const express = require('express');
 const socketIO = require('socket.io');
-const path = require('path');
 
+const path = require('path');
+const express = require('express');
+const app = express()
+const server=require('http').createServer(app)
+const io = socketIO(server);
 const PORT = process.env.PORT || 3000;
+
 const INDEX = path.join(__dirname, '../react-ui/build/index.html');
 
-const server = express()
-  .use((req, res) => res.sendFile(INDEX) )
-  .listen(PORT, () => console.log(`Listening on ${ PORT }`));
-
-  server.all('*', function(req, res, next) {
-    res.header('Access-Control-Allow-Origin', '*');
-    res.header('Access-Control-Allow-Credentials', true);
-    res.header('Access-Control-Allow-Methods', 'PUT, GET, POST, DELETE, OPTIONS');
-    res.header('Access-Control-Allow-Headers', 'Content-Type');
-    next();
-  });
-
-const io = socketIO(server);
-
+app.use(express.static(path.join(__dirname, '../react-ui/build')))
+app.use((req, res) => res.sendFile(__dirname + './index.html') )
 
 var players = [];
 
@@ -193,3 +185,4 @@ function findName(nameKey,myArray){
 
 // app.listen(process.env.PORT || 9000);
 
+server.listen(PORT, () => console.log(`Listening on ${ PORT }`));
