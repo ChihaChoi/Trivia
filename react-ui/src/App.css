@@ -411,9 +411,19 @@ input[type="radio"] {
   margin-top: 0;
   align-items: center;
   align-content: center;
-  z-index: 900; }
+  opacity: 0;
+  z-index: 900;
+  transition: opacity 1s; }
+  .scoreScreen.visible {
+    opacity: 1; }
+    .scoreScreen.visible .playerInfo {
+      transform: translateX(0px);
+      opacity: 1; }
 
 .playerInfo {
+  transition: 1s;
+  transform: translateX(-200px);
+  opacity: 0;
   width: 100%;
   font-size: 2rem;
   text-align: center;

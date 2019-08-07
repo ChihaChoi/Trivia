@@ -35,15 +35,19 @@ class ScoreScreen extends Component {
         return color;
         
     }
+    slideIn(j){
+        let transition = {
+            transitionDelay: `${0.2*j}s`
+        }
+        return transition
+    }
     render() { 
-        return(<div className="scoreScreen">
+        return(<div className={`scoreScreen`+ (this.props.visible? ` visible`: "")}>
             {this.props.playerData?
             this.props.playerData.map((ele,i)=>{ 
                 
                 return (
-                <div className="playerInfo" style={this.randomColor(i)}> 
-                    {/* Currently uncompressed, finish in LoginScreen.js */}
-                    <img className="playerInfo__avatar"src={this.bufferToURL(ele.photo)} />
+                <div className= {`playerInfo`} style={Object.assign(this.randomColor(i),this.slideIn(i))}> 
                     <div className="playerInfo__name"> {ele.name} </div>
                     <div className="playerInfo__score"> {ele.score} </div>
                 </div>
