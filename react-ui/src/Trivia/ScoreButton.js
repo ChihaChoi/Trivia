@@ -20,7 +20,7 @@ class ScoreButton extends Component {
             <label for="navi-toggle" className="score__button">
                 <i className="fas fa-trophy"></i>
             </label>
-            <ScoreScreen playerData={this.props.playerData} visible={this.state.scoreScreen}/>:
+            <ScoreScreen playerData={this.props.playerData} visible={this.state.scoreScreen}/>
             
 
 
