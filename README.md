@@ -5,7 +5,7 @@ This trivia game uses React for the front-end and node.js for the server. Using 
 ## Installation:
 *installation requires node.js to be installed
 
-From the terminal, cd into the directory then type the following commands:
+From the terminal, navigate into the directory then type the following commands:
 ```
 npm install
 npm run build
@@ -13,11 +13,13 @@ npm run build
 
 ## To run:
 
+To initiate the server, run the following command from your console:
+
 ```
 npm start
 ```
 
-Then connect to the app by entering into your address bar your IPv4 address followed by ":3000" e.g.
+You can open the app by entering your IPv4 address into your browser followed by ":3000" e.g.
 
 ```
 192.168.0.1:3000
