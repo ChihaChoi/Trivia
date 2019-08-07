@@ -6,7 +6,7 @@ const express = require('express');
 const app = express()
 const server=require('http').createServer(app)
 const io = socketIO(server);
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 4000;
 
 const INDEX = path.join(__dirname, '../react-ui/build/index.html');
 
