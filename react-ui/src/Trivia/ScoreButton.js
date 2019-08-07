@@ -4,12 +4,12 @@ import ScoreScreen from './ScoreScreen'
 class ScoreButton extends Component {
     constructor(props) {
         super(props);
-        this.state = { scoreScreen : "hidden" }
+        this.state = { scoreScreen : false }
     }
     toggleScoreScreen(){
-        {this.state.scoreScreen==="hidden"?
-        this.setState({ scoreScreen : "visible"}):
-        this.setState({ scoreScreen : "hidden"})
+        {this.state.scoreScreen===false?
+        this.setState({ scoreScreen : true}):
+        this.setState({ scoreScreen : false})
     }
     console.log("hes")
 }
@@ -20,10 +20,8 @@ class ScoreButton extends Component {
             <label for="navi-toggle" className="score__button">
                 <i className="fas fa-trophy"></i>
             </label>
-
-            {this.state.scoreScreen==="visible"?
-            <ScoreScreen playerData={this.props.playerData} />:
-            ""}
+            <ScoreScreen playerData={this.props.playerData} visible={this.state.scoreScreen}/>:
+            
 
 
         </div> );

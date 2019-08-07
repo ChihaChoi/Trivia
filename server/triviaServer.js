@@ -62,16 +62,15 @@ setInterval(()=>{
 
 io.on('connection',(socket)=>{
     //Collect player info ==========================
-    socket.on('info',(playerName,playerPhoto)=>{
+    socket.on('info',(playerName)=>{
         console.log(playerName)
         //add connected player's details to the list of players if not already in there
         if(findName(playerName,players)=== 0){
-            let player = new Player(playerName,socket,playerPhoto)
+            let player = new Player(playerName,socket)
             players.push(player);
         } else {
-            //if player is in player list, then just update their socket and photo
+            //if player is in player list, then just update their socket
             findName(playerName,players).socketId=socket;
-            findName(playerName,players).photo=playerPhoto;
         }
         //update all clients' player list after every new player submission
         setInterval(()=>{
@@ -81,7 +80,7 @@ io.on('connection',(socket)=>{
 
         //lists all logged players in console
         players.forEach((ele,i)=>{
-            console.log(i,"--",ele.name,ele.photo)
+            console.log(i,"--",ele.name)
         })
     })
 
@@ -122,7 +121,7 @@ function sendPlayerAnswers(){
 function sendPlayerData(){
     let playersToEmit = []
     players.forEach((ele,i)=>{
-        let newPlayer = new PlayerData(ele.name,ele.photo,ele.score)
+        let newPlayer = new PlayerData(ele.name,ele.score)
         playersToEmit.push(newPlayer)
     })
     io.emit('playerData',playersToEmit)
