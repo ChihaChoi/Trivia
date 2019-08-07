@@ -11,9 +11,7 @@ class LoginScreen extends Component {
     handleChange(evt){
         this.setState({textInput: evt.target.value})
       }
-    fileChangedHandler = event => {
-        this.setState({ selectedFile: URL.createObjectURL(this.uploadInput.files[0])})
-    }
+
 
     //upload name and photo to server
     uploadHandler = () => {
@@ -26,10 +24,8 @@ class LoginScreen extends Component {
             playerName: this.state.textInput, 
             textInput:""},
         ()=>{
-            console.log(this.state.selectedFile)
             console.log(this.state.playerName)
-            socket.emit('info',this.state.playerName,this.uploadInput.files[0])
-            console.log(this.uploadInput.files[0])
+            socket.emit('info',this.state.playerName)
             this.props.changeToWaiting()
         })
         
@@ -37,9 +33,6 @@ class LoginScreen extends Component {
     render() { 
         return ( 
         <div className="container login-screen">
-            <img className="avatar" src={this.state.selectedFile}/>
-            <input id="upload" type="file" ref={(ref) => { this.uploadInput = ref; }}  onChange={this.fileChangedHandler}/>
-            <label class="btn" for="upload">Choose Image</label>
             <input type="text" className="input"  value={this.state.textInput} maxLength="10" onChange={this.handleChange.bind(this)} placeholder={this.state.playerName}/>
 
             <button className="submit btn" onClick={this.uploadHandler.bind(this)}>SUBMIT!</button>
