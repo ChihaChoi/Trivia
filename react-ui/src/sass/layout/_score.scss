@@ -6,19 +6,22 @@
         }
     }
     &__button{
+        //need to make responsive for desktop views
         position:fixed;
-        top:3rem;
-        left:3rem;
-        border-radius: 5px;
-        height:4rem;
-        width:4rem;
+        top:85vh;
+        left:42vw;
+        height:16vw;
+        width:16vw;
+        //==================================
+
+        border-radius: 500px;
         background-color: #fff;
         display: flex;
         // align-content: center;
         align-items: center;
         justify-content: center;
-        z-index: 1000;
-        box-shadow: 0 0 5px #000000;
+        z-index: 910;
+        box-shadow: 0 2px 5px  1px #00000080;
         transition: transform 0.2s;
 
         &:active{
@@ -31,8 +34,8 @@
 }
 
 .fa-trophy{
-    color:red;
-    font-size: 2.5rem;
+    color: rgb(170, 4, 18);
+    font-size: 8vw;
 }
 
 .scoreScreen{
@@ -40,23 +43,45 @@
     top:0;
     padding-top:10vh;
     width:100vw;
-    height:100vh;
+    height:200vh;
     display: flex;
     flex-direction: column;
-    background-color: white;
+    // background-color: white;
+    // background-image: linear-gradient(45deg, rgb(41, 181, 216),rgb(255, 73, 255));
+
     margin-top: 0;
     align-items: center;
     align-content: center;
-    opacity:0;
+    // opacity:0;
     z-index: 900;
+    // transform: translateY(0px);
 
     transition: opacity 1s;
     
     pointer-events: none;
-    &.visible{
-        opacity: 1;
-        pointer-events: auto;
+    &::before{
+        content:"";
+        background-image: linear-gradient(45deg, #2eb9dc, #ad57f9 30%, #fff0 70%);
+        background-size:cover;
+        width: 100vw;
+        height: 400vh;
+        z-index:-1;
+        position:fixed;
+        top:0;
+        left:0;
+        transform: translateY(0px);
+        transition: transform 2s;
+        // transition-delay: 1s;
+        
 
+    }
+    &.visible{
+        // opacity: 1;
+        pointer-events: auto;
+        &::before{
+            transform: translateY(-300vh);
+            // top:-100vh;
+        }
         & .playerInfo{
             transform: translateX(0px);
             opacity:1;
