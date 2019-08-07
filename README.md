@@ -17,17 +17,14 @@ npm run build
 npm start
 ```
 
-## Running the app on your local network
-If you want to run the server on your local network rather than just your PC, then you will need to change your the ipv4Address variable (in line 6 of client/src/socket.js) to a string variable equal to your IPv4 Address. (do this before installation)
-e.g.
-```javascript
-var ipv4Address = '10.226.211.208'
+Then connect to the app by entering into your address bar your IPv4 address followed by ":3000" e.g.
+
 ```
-to find your IPv4 address, simply run 'ipconfig' in your terminal.
+192.168.0.1:3000
+```
 
-Doing this means that you can run this app on all devices on the same network
+To find your IPv4 address, type into your console 'ipconfig'
 
-To connect to the client using another device, type your IPv4 Address into your address bar followed by ':9000'
 
 
 ## To Do
@@ -42,7 +39,7 @@ To connect to the client using another device, type your IPv4 Address into your 
 ### Styling
   * score screen
   * ~~results screen~~
-  * buttons on question page
+  * ~~buttons on question page~~
   * transition animations
   * ~~timer animation~~
 
