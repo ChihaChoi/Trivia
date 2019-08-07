@@ -393,7 +393,12 @@ input[type="radio"] {
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 1000; }
+  z-index: 1000;
+  box-shadow: 0 0 5px #000000;
+  transition: transform 0.2s; }
+  .score__button:active {
+    transform: translateY(2px);
+    box-shadow: 0 0 3px #000000; }
 
 .fa-trophy {
   color: red;
@@ -426,10 +431,9 @@ input[type="radio"] {
   transition: 1s;
   transform: translateX(-200px);
   opacity: 0;
-  width: 100%;
+  width: 200vw;
   font-size: 2rem;
   text-align: center;
-  background-color: #003585;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -437,17 +441,10 @@ input[type="radio"] {
   justify-content: center;
   padding-bottom: 5px;
   padding-top: 5px; }
-  .playerInfo__avatar {
-    margin-left: 10%;
-    width: 10%;
-    height: auto;
-    align-items: center;
-    border-radius: 50%;
-    object-fit: cover; }
   .playerInfo__name {
-    width: 60%; }
+    width: 60vw; }
   .playerInfo__score {
-    width: 20%; }
+    width: 20vw; }
   .playerInfo__line {
     color: transparent;
     width: 70%; }
