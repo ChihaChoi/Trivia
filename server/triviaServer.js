@@ -22,16 +22,14 @@ const animationLength = 3
 
 
 class Player{
-    constructor(PlayerName,PlayerSocket,PlayerPhoto){
+    constructor(PlayerName,PlayerSocket){
         this.name = PlayerName;
         this.socketId = PlayerSocket;
-        this.photo = PlayerPhoto;
         this.score = 0;
     }}
 class PlayerData{
-        constructor(PlayerName,PlayerPhoto,PlayerScore){
+        constructor(PlayerName,PlayerScore){
             this.name = PlayerName;
-            this.photo = PlayerPhoto;
             this.score = PlayerScore;
         }}
 

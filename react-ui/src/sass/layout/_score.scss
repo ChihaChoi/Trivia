@@ -43,8 +43,10 @@
 
     transition: opacity 1s;
     
+    pointer-events: none;
     &.visible{
         opacity: 1;
+        pointer-events: auto;
 
         & .playerInfo{
             transform: translateX(0px);
