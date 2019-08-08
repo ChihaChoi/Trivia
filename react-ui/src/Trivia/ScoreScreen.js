@@ -53,7 +53,7 @@ class ScoreScreen extends Component {
                 </div>
                 
                 )}) :
-            "no"
+            "no data from server"
             }
         </div>
         )

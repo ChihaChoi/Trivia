@@ -17,7 +17,7 @@ class WaitingScreen extends Component {
     }
     render() { 
         return ( 
-        <div className="notMuch">
+        <div>
             <ScoreButton  playerData={this.state.playerData} />
             <div className="container waitingScreen">
                 <h1 className="waiting--title">Next round starts in </h1>
