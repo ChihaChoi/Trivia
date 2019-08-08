@@ -5,17 +5,43 @@
     color: inherit;
   }
   
-.input {
+.textbox{
+  width: 80%;
+  overflow: hidden;
+  position:relative;
+  height:5rem;
+  margin: 3rem;
+
+  &__input {
+    position:absolute;
+    top:0;
+    left:0;
     font-family: inherit;
     font-size: 3rem;
-    margin: 2rem;
-    padding: 0.5rem;
-    width: 80%;
+    padding: 0.5rem 0;
+    width: 100%;
     border: none;
     background-color: #fffa;
     text-align: center;
     resize: none;
     text-align: bottom;
     border-radius: 4px;
-    overflow: hidden;
   }
+  &__input:placeholder-shown + .textbox__placeholder{
+    transform: translate(-50%,-50%);
+    opacity:0.5
+  }
+  &__placeholder{
+    font-family: inherit;
+    font-size: 3rem;
+    color:#000a;
+    z-index:100;
+    position:absolute;
+     left:50%;
+    top:50%;
+      opacity:0;
+    transform: translate(-50%,-200%);
+    transition: 0.6s;
+    pointer-events:none;
+  }
+}
