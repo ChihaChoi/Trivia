@@ -56,23 +56,13 @@ html {
   clip-path: polygon(50% 0%, 100% 0, 100% 100%, 0 100%);
   transform: translateX(100%);
   position: absolute;
-  z-index: 1000; }
+  z-index: 2000; }
   .trans--slideLeft__1 {
     background-image: linear-gradient(to top right, #081831, #0b1e3d, #122d5a);
     animation: slideLeft 1s cubic-bezier(0.24, 0.77, 0.24, 0.78) forwards, fadeOut 0s 3s forwards; }
   .trans--slideLeft__2 {
     animation: slideLeft 1s cubic-bezier(0.24, 0.77, 0.24, 0.78) 2s forwards, fadeOut 1s 3s forwards;
-    z-index: 2000; }
-
-#logo {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 80vw;
-  z-index: 1500; }
-  #logo * {
-    stroke: #fffe; }
+    z-index: 2200; }
 
 @keyframes line-anim {
   to {
@@ -398,6 +388,22 @@ input[type="radio"] {
   font-size: 2rem;
   width: 100px;
   height: 100px; }
+
+#logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80vw;
+  z-index: 2100; }
+  #logo * {
+    stroke: #fffe; }
+
+.login__logo #logo {
+  top: 20%; }
+
+.transition #logo {
+  animation: fadeOut 0s 3s forwards; }
 
 .score__checkbox {
   visibility: hidden; }

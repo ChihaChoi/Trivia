@@ -9,8 +9,7 @@ class Logo extends Component {
     // logo[i].style.setProperty('stroke','red')
     logo[i].style.setProperty('stroke-dasharray',logo[i].getTotalLength())
     logo[i].style.setProperty('stroke-dashoffset',logo[i].getTotalLength())
-    logo[i].style.setProperty('animation',`line-anim 1s ${0.3+0.15*i}s forwards,
-        fadeOut 0s 3s forwards`)
+    logo[i].style.setProperty('animation',`line-anim 1s ${0.3+0.15*i}s forwards`)
 }
 
     }

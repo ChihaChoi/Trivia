@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import LoginScreen from './LoginScreen'
 import WaitingScreen from './WaitingScreen'
-
+import Logo from '../transitions/Logo'
 
 class Login extends Component {
     constructor(props) {
@@ -19,6 +19,9 @@ class Login extends Component {
     }
     render() { 
         return ( <div>
+            <div className="login__logo">
+                <Logo />
+            </div>
             {this.state.waiting ? 
             <WaitingScreen /> : 
             <LoginScreen changeToWaiting={this.changeToWaiting.bind(this)}/>
