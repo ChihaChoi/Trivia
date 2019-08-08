@@ -5,6 +5,7 @@ import socket from './socket'
 import Login from './Login/Login'
 import Transition_SlideLeft from './transitions/Transition_SlideLeft'
 import TriviaMain from './Trivia/TriviaMain';
+import FullScreenButton from './FullScreenButton';
 import Fullscreen from "react-full-screen";
 
 
@@ -21,6 +22,7 @@ class Game extends Component {
       screen: "login",
       number: 0,
       isFull: false,
+      waiting: false,
     }
   }
 
@@ -42,9 +44,8 @@ class Game extends Component {
     console.log("hellooooooo")
     this.setState({screen:"transition"})
   }
-  foo(){
+  fullScreen(){
     this.setState({ isFull: true });
-    console.log("foo works!")
   }
 
   render() { 
@@ -58,12 +59,15 @@ class Game extends Component {
           <div className="full-screenable-node">
           <div className={"body "+this.state.color} >
           {this.state.screen=== 'login' ?
-            <Login foo={this.foo.bind(this)} changeToWaiting={()=>{ this.setState({ waiting: "yes" })}}/> :
+            <Login fullScreen={this.fullScreen.bind(this)} changeToWaiting={()=>{ this.setState({ waiting: true })}}/> :
             <TriviaMain  question={this.state.question} answers={this.state.answers} category={this.state.category} /> 
           }
       </div>
     </div>
   </Fullscreen>
+  {this.state.waiting?
+  <FullScreenButton fullScreen={this.fullScreen.bind(this)} /> : "" }
+
       </div>
     )
   }

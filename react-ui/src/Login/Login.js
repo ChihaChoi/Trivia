@@ -24,7 +24,7 @@ class Login extends Component {
             </div>
             {this.state.waiting ? 
             <WaitingScreen /> : 
-            <LoginScreen foo={this.props.foo} changeToWaiting={this.changeToWaiting.bind(this)}/>
+            <LoginScreen fullScreen={this.props.fullScreen} changeToWaiting={this.changeToWaiting.bind(this)}/>
             }
 
         </div> );
