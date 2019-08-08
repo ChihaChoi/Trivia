@@ -36,7 +36,7 @@ class LoginScreen extends Component {
             <p className="login-screen__title" >CHIVIHA</p>
             <div className="textbox" >
                 <input type="text" className="textbox__input"  value={this.state.textInput} maxLength="10" onChange={this.handleChange.bind(this)} placeholder=" "/>
-                <label className="textbox__placeholder" >YOUR NAME</label>
+                <label className="textbox__placeholder" >Your Name</label>
             </div>
             <button className="submit btn" onClick={this.uploadHandler.bind(this)}>Play!</button>
         </div>
