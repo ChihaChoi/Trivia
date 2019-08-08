@@ -33,7 +33,6 @@ class LoginScreen extends Component {
     render() { 
         return ( 
         <div className="container login-screen">
-            <p className="login-screen__title" >CHIVIHA</p>
             <div className="textbox" >
                 <input type="text" className="textbox__input"  value={this.state.textInput} maxLength="10" onChange={this.handleChange.bind(this)} placeholder=" "/>
                 <label className="textbox__placeholder" >Your Name</label>
