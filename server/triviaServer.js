@@ -145,7 +145,13 @@ function sendTrivia(){
                 
                 let question = data[0].question;
                 var answers = data[0].incorrect_answers;
-                let category = data[0].category;
+                let categoryStr = data[0].category;
+                let category = ""
+                if(categoryStr.replace(/ .*/,'') === "Entertainment:") {
+                    category = categoryStr.replace("Entertainment: ","")
+                } else {
+                    category = categoryStr
+                }
                 
                 //insert correct answer randomly into list of answers
                 answers.splice(correctAnswer,0,data[0].correct_answer)
