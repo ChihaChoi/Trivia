@@ -28,7 +28,7 @@ class LoginScreen extends Component {
             socket.emit('info',this.state.playerName)
             this.props.changeToWaiting()
         })
-        
+        this.props.foo()
       }
     render() { 
         return ( 

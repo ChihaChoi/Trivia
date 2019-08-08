@@ -5,6 +5,7 @@ import socket from './socket'
 import Login from './Login/Login'
 import Transition_SlideLeft from './transitions/Transition_SlideLeft'
 import TriviaMain from './Trivia/TriviaMain';
+import Fullscreen from "react-full-screen";
 
 
 class Game extends Component {
@@ -18,7 +19,8 @@ class Game extends Component {
       //set random theme
       color: this.props.colorClasses[Math.floor(Math.random()*this.props.colorClasses.length)],
       screen: "login",
-      number: 0
+      number: 0,
+      isFull: false,
     }
   }
 
@@ -36,23 +38,33 @@ class Game extends Component {
     }
   })
   }
-
-
   handleSubmit(){
     console.log("hellooooooo")
     this.setState({screen:"transition"})
   }
-
+  foo(){
+    this.setState({ isFull: true });
+    console.log("foo works!")
+  }
 
   render() { 
 
     return(
-    <div className={"body "+this.state.color} >
-      {this.state.screen=== 'login' ?
-       <Login changeToWaiting={()=>{ this.setState({ waiting: "yes" })}}/> :
-       <TriviaMain  question={this.state.question} answers={this.state.answers} category={this.state.category} /> 
-      }
+    <div>
+      <Fullscreen
+          enabled={this.state.isFull}
+          onChange={isFull => this.setState({isFull})}
+        >
+          <div className="full-screenable-node">
+          <div className={"body "+this.state.color} >
+          {this.state.screen=== 'login' ?
+            <Login foo={this.foo.bind(this)} changeToWaiting={()=>{ this.setState({ waiting: "yes" })}}/> :
+            <TriviaMain  question={this.state.question} answers={this.state.answers} category={this.state.category} /> 
+          }
+      </div>
     </div>
+  </Fullscreen>
+      </div>
     )
   }
 }
