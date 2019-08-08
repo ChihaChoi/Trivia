@@ -70,8 +70,7 @@ html {
 
 .body {
   height: 100vh;
-  width: 100vw;
-  transition: 2s; }
+  width: 100vw; }
 
 * {
   overflow: hidden; }
@@ -381,7 +380,8 @@ input[type="radio"] {
     opacity: 0;
     transform: translate(-50%, -200%);
     transition: 0.6s;
-    pointer-events: none; }
+    pointer-events: none;
+    width: 100%; }
 
 .timer {
   color: white;
