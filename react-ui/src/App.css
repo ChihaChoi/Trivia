@@ -476,12 +476,17 @@ input[type="radio"] {
     left: 0;
     transform: translateY(0px);
     transition: transform 2s; }
+  .scoreScreen__header {
+    opacity: 0;
+    transition: 1.5s; }
   .scoreScreen.visible {
     pointer-events: auto; }
     .scoreScreen.visible::before {
       transform: translateY(-300vh); }
     .scoreScreen.visible .playerInfo {
       transform: translateX(0px);
+      opacity: 1; }
+    .scoreScreen.visible .scoreScreen__header {
       opacity: 1; }
 
 .playerInfo {

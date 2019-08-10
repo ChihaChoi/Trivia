@@ -37,6 +37,7 @@ class ScoreScreen extends Component {
   render() {
     return (
       <div className={`scoreScreen` + (this.props.visible ? ` visible` : "")}>
+        <h1 className="scoreScreen__header">Leaderboard</h1>
         {this.props.playerData
           ? this.props.playerData.map((ele, i) => {
               return (
