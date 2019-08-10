@@ -1,21 +1,21 @@
 .prompt {
-    font-weight: 400;
-    font-size: 2rem;
-    margin: 1rem;
-    color: inherit;
-  }
-  
-.textbox{
+  font-weight: 400;
+  font-size: 2rem;
+  margin: 1rem;
+  color: inherit;
+}
+
+.textbox {
   width: 80%;
   overflow: hidden;
-  position:relative;
-  height:5rem;
+  position: relative;
+  height: 5rem;
   margin: 3rem;
 
   &__input {
-    position:absolute;
-    top:0;
-    left:0;
+    position: absolute;
+    top: 0;
+    left: 0;
     font-family: inherit;
     font-size: 3rem;
     padding: 0.5rem 0;
@@ -27,22 +27,22 @@
     text-align: bottom;
     border-radius: 4px;
   }
-  &__input:placeholder-shown + .textbox__placeholder{
-    transform: translate(-50%,-50%);
-    opacity:0.5
+  &__input:placeholder-shown + .textbox__placeholder {
+    transform: translate(-50%, -50%);
+    opacity: 0.5;
   }
-  &__placeholder{
+  &__placeholder {
     font-family: inherit;
     font-size: 3rem;
-    color:#000a;
-    z-index:100;
-    position:absolute;
-     left:50%;
-    top:50%;
-      opacity:0;
-    transform: translate(-50%,-200%);
+    color: #000a;
+    z-index: 100;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    opacity: 0;
+    transform: translate(-50%, -200%);
     transition: 0.6s;
-    pointer-events:none;
-    width:100%;
+    pointer-events: none;
+    width: 100%;
   }
 }

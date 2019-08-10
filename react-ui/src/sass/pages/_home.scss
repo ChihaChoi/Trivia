@@ -1,9 +1,9 @@
-.body{
-    height:100vh;
-    width:100vw;
+.body {
+  height: 100vh;
+  width: 100vw;
 }
-*{
-  overflow: hidden
+* {
+  overflow: hidden;
 }
 
 //remove outlines on mobile devices
@@ -11,75 +11,72 @@ input:focus,
 select:focus,
 textarea:focus,
 button:focus {
-    outline: none;
+  outline: none;
 }
 //remove radio button
-input[type="radio"]{
+input[type="radio"] {
   visibility: hidden;
 }
 
-
 //need to move to a more appropriate file inline with 7>1 practices
-@each $color in $list{
-    .theme-#{$color}{
-      background: color($color);
+@each $color in $list {
+  .theme-#{$color} {
+    background: color($color);
 
-      // & *{
-      //   color: color($color,button-active)
-      // }
-      // & *::placeholder{
-      //   color: rgba(color($color,button-active),0.5)
-      // }
+    // & *{
+    //   color: color($color,button-active)
+    // }
+    // & *::placeholder{
+    //   color: rgba(color($color,button-active),0.5)
+    // }
 
-      .results__container--correct{
-        & .results__answer{
-          font-weight: 600;
-          background: white;
-          color: color($color, button)
-        }
-        & .results__players__player{
-          font-weight: 600;
-
-          background: white;
-          color: color($color, button);
-          &--active{
-            background: color($color, button);
-            color: white;
-          border: solid 3px white;
-          }
-        }
-        & .results__plusOne{
-          color: color($color, button);
-        }
+    .results__container--correct {
+      & .results__answer {
+        font-weight: 600;
+        background: white;
+        color: color($color, button);
       }
-      .results__answer{
-        background: color($color, button)
-      }
-      .results__players__player{
-        background: color($color, button);
-        border: 3px solid color($color, base);
-        &--active{
-          // background: white;
-          // color: color($color, button);
+      & .results__players__player {
+        font-weight: 600;
+
+        background: white;
+        color: color($color, button);
+        &--active {
+          background: color($color, button);
+          color: white;
           border: solid 3px white;
         }
       }
-
-      .btn{
-        transition: all 0.3s, transform 0.03s,;
-      
-        background: color($color,button);
-        &:active{
-
-            background: color($color,button-active);
-            
-        }
+      & .results__plusOne {
+        color: color($color, button);
       }
-      input[type="radio"]:checked~.btn { 
-        // background-color:color($color,button-active);
-        // border: solid white 5px;
-          background: white;
-          color: color($color, button)
-       }
+    }
+    .results__answer {
+      background: color($color, button);
+    }
+    .results__players__player {
+      background: color($color, button);
+      border: 3px solid color($color, base);
+      &--active {
+        // background: white;
+        // color: color($color, button);
+        border: solid 3px white;
+      }
+    }
+
+    .btn {
+      transition: all 0.3s, transform 0.03s;
+
+      background: color($color, button);
+      &:active {
+        background: color($color, button-active);
+      }
+    }
+    input[type="radio"]:checked ~ .btn {
+      // background-color:color($color,button-active);
+      // border: solid white 5px;
+      background: white;
+      color: color($color, button);
     }
   }
+}

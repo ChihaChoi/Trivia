@@ -1,52 +1,54 @@
-@keyframes slideLeft{
-    to{
-        transform: translateX(-50%)
-    }
+@keyframes slideLeft {
+  to {
+    transform: translateX(-50%);
+  }
 }
-@keyframes fadeOut{
-    to{
-        opacity: 0;
-    }
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+  }
 }
 @keyframes fadeIn {
-    from {
-        transform: translateY(2rem)
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0)
-    }
+  from {
+    transform: translateY(2rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
-.transition{
-    // animation: fadeOut 1s 3s forwards;
-    // z-index:2000;
+.transition {
+  // animation: fadeOut 1s 3s forwards;
+  // z-index:2000;
 }
 
-.trans--slideLeft{
-    height:100vh;
-    width:200vw;
-    clip-path: polygon(50% 0%, 100% 0, 100% 100%, 0 100%);
-    transform: translateX(100%);
-    position: absolute;
-    z-index: 2000;
-    &__1{
-        background-image:linear-gradient(to top right,rgb(8, 24, 49),rgb(11, 30, 61),rgb(18, 45, 90));
-        animation: slideLeft 1s cubic-bezier(.24,.77,.24,.78) forwards,
-        fadeOut 0s 3s forwards
-        ;
-    }
-    &__2{
-        animation: 
-            slideLeft 1s cubic-bezier(.24,.77,.24,.78) 2s forwards,fadeOut 1s 3s forwards;
-        z-index: 2200; 
-    }
+.trans--slideLeft {
+  height: 100vh;
+  width: 200vw;
+  clip-path: polygon(50% 0%, 100% 0, 100% 100%, 0 100%);
+  transform: translateX(100%);
+  position: absolute;
+  z-index: 2000;
+  &__1 {
+    background-image: linear-gradient(
+      to top right,
+      rgb(8, 24, 49),
+      rgb(11, 30, 61),
+      rgb(18, 45, 90)
+    );
+    animation: slideLeft 1s cubic-bezier(0.24, 0.77, 0.24, 0.78) forwards,
+      fadeOut 0s 3s forwards;
+  }
+  &__2 {
+    animation: slideLeft 1s cubic-bezier(0.24, 0.77, 0.24, 0.78) 2s forwards,
+      fadeOut 1s 3s forwards;
+    z-index: 2200;
+  }
 }
 
-
-
-@keyframes line-anim{
-    to{
-        stroke-dashoffset:0;  
-    }
+@keyframes line-anim {
+  to {
+    stroke-dashoffset: 0;
+  }
 }

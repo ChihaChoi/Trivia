@@ -1,25 +1,20 @@
+#logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80vw;
+  z-index: 2100;
 
-#logo{
-    position: absolute;
-    top:50%;
-    left:50%;
-    transform: translate(-50%,-50%);
-    width: 80vw;
-    z-index: 2100;
-    
-
-
-    & *{
-        stroke: #fffe;
-    }
-
+  & * {
+    stroke: #fffe;
+  }
 }
 
-.login__logo #logo{
-    z-index:100;
-    top:20%;
+.login__logo #logo {
+  z-index: 100;
+  top: 20%;
 }
-.transition #logo{
-    animation: fadeOut 0s 3s forwards;
-
+.transition #logo {
+  animation: fadeOut 0s 3s forwards;
 }
