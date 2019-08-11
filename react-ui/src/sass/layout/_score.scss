@@ -113,7 +113,11 @@
   justify-content: center;
   padding-bottom: 5px;
   padding-top: 5px;
-
+  &--active {
+    font-weight: 600;
+    border-bottom: 3px solid #fffd;
+    border-top: 3px solid #fffd;
+  }
   &__name {
     width: 60vw;
   }

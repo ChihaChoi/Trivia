@@ -42,10 +42,15 @@ class ScoreScreen extends Component {
           ? this.props.playerData.map((ele, i) => {
               return (
                 <div
-                  className={`playerInfo`}
+                  className={
+                    `playerInfo` +
+                    (ele.name === window.playerName
+                      ? " playerInfo--active"
+                      : "")
+                  }
                   style={Object.assign(this.randomColor(i), this.slideIn(i))}
                 >
-                  <div className="playerInfo__name"> {ele.name} </div>
+                  <div className={"playerInfo__name "}>{ele.name}</div>
                   <div className="playerInfo__score"> {ele.score} </div>
                 </div>
               );
