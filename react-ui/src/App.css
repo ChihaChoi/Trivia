@@ -431,9 +431,10 @@ input[type="radio"] {
 .score__button {
   position: fixed;
   top: 85vh;
-  left: 42vw;
-  height: 16vw;
-  width: 16vw;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 9vh;
+  width: 9vh;
   border-radius: 500px;
   background-color: #fff;
   display: flex;
@@ -441,14 +442,16 @@ input[type="radio"] {
   justify-content: center;
   z-index: 910;
   box-shadow: 0 2px 5px 1px #00000080;
-  transition: transform 0.2s; }
+  transition: 0.2s; }
   .score__button:active {
-    transform: translateY(2px);
+    transform: translateY(4px) translateX(-50%);
+    background-color: #ddd;
+    opacity: 0.9;
     box-shadow: 0 0 3px #000000; }
 
 .fas {
   color: #aa0412;
-  font-size: 8vw; }
+  font-size: 5vh; }
 
 .scoreScreen {
   position: fixed;
