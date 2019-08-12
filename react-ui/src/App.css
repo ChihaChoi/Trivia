@@ -265,7 +265,8 @@ input[type="radio"] {
       z-index: 10; }
 
 .container.waitingScreen h1 {
-  margin-bottom: 50px; }
+  margin-bottom: 30px;
+  margin-top: 50px; }
 
 .avatar {
   width: 20vh;
