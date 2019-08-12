@@ -1,6 +1,6 @@
 import io from "socket.io-client";
 
-var socket = io("localhost:4000");
+var socket = io();
 
 // var ipv4Address = null
 
