@@ -20,6 +20,10 @@
   padding: 1rem;
   &.submit {
     font-size: 3rem;
+    &.invalid {
+      background: #7779;
+      color: #2229;
+    }
   }
 }
 

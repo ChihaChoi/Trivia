@@ -309,6 +309,9 @@ input[type="radio"] {
   padding: 1rem; }
   .login-screen .btn.submit {
     font-size: 3rem; }
+    .login-screen .btn.submit.invalid {
+      background: #7779;
+      color: #2229; }
 
 .answer-btn .btn {
   display: flex;

@@ -8,33 +8,44 @@ class LoginScreen extends Component {
       textInput: "",
       playerName: "Your Name",
       selectedFile: require("../default_avatar.png"),
-      fadingOut: false
+      fadingOut: false,
+      validName: false
     };
   }
 
   handleChange(evt) {
     this.setState({ textInput: evt.target.value });
   }
+  componentDidUpdate() {
+    this.state.textInput.length > 2
+      ? this.state.validName === false
+        ? this.setState({ validName: true })
+        : console.log("no change")
+      : this.state.validName === true
+      ? this.setState({ validName: false })
+      : console.log("no change");
+  }
 
   //upload name and photo to server
   uploadHandler = evt => {
-    //set callback to make setState sync to socket.emit
+    if (this.state.validName) {
+      //set playername as global variable for when they reconnect
+      window.playerName = this.state.textInput;
 
-    //set playername as global variable for when they reconnect
-    window.playerName = this.state.textInput;
-
-    this.setState(
-      {
-        playerName: this.state.textInput
-      },
-      () => {
-        socket.emit("info", this.state.playerName);
-        this.setState({ fadingOut: true });
-        setTimeout(() => {
-          this.props.changeToWaiting();
-        }, 500); //fadeout animation length
-      }
-    );
+      //set callback to make setState sync to socket.emit
+      this.setState(
+        {
+          playerName: this.state.textInput
+        },
+        () => {
+          socket.emit("info", this.state.playerName);
+          this.setState({ fadingOut: true });
+          setTimeout(() => {
+            this.props.changeToWaiting();
+          }, 500); //fadeout animation length
+        }
+      );
+    }
     evt.preventDefault();
   };
   render() {
@@ -51,6 +62,7 @@ class LoginScreen extends Component {
               type="text"
               className="textbox__input"
               value={this.state.textInput}
+              minLength="3"
               maxLength="10"
               onChange={this.handleChange.bind(this)}
               placeholder=" "
@@ -58,8 +70,8 @@ class LoginScreen extends Component {
             <label className="textbox__placeholder">Your Name</label>
           </div>
           <button
-            type="button"
-            className="submit btn"
+            type="button "
+            className={"submit btn " + (this.state.validName ? "" : "invalid")}
             onClick={this.uploadHandler.bind(this)}
           >
             Play!
