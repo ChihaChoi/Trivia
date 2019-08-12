@@ -436,7 +436,7 @@ input[type="radio"] {
     visibility: hidden; }
 
 .score__button {
-  position: fixed;
+  position: absolute;
   top: 85vh;
   left: 50%;
   transform: translateX(-50%);

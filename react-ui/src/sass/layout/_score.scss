@@ -7,7 +7,7 @@
   }
   &__button {
     //need to make responsive for desktop views
-    position: fixed;
+    position: absolute;
     top: 85vh;
     left: 50%;
     transform: translateX(-50%);
