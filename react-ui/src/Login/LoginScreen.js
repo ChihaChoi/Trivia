@@ -38,20 +38,25 @@ class LoginScreen extends Component {
   render() {
     return (
       <div className="container login-screen flex-column">
-        <div className="textbox">
-          <input
-            type="text"
-            className="textbox__input"
-            value={this.state.textInput}
-            maxLength="10"
-            onChange={this.handleChange.bind(this)}
-            placeholder=" "
-          />
-          <label className="textbox__placeholder">Your Name</label>
-        </div>
-        <button className="submit btn" onClick={this.uploadHandler.bind(this)}>
-          Play!
-        </button>
+        <form className="flex-column">
+          <div className="textbox">
+            <input
+              type="text"
+              className="textbox__input"
+              value={this.state.textInput}
+              maxLength="10"
+              onChange={this.handleChange.bind(this)}
+              placeholder=" "
+            />
+            <label className="textbox__placeholder">Your Name</label>
+          </div>
+          <button
+            className="submit btn"
+            onClick={this.uploadHandler.bind(this)}
+          >
+            Play!
+          </button>
+        </form>
       </div>
     );
   }
