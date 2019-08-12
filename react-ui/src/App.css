@@ -50,6 +50,11 @@ html {
     opacity: 1;
     transform: translateX(0); } }
 
+.fadeIn {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeIn 1s forwards ease-out; }
+
 .trans--slideLeft {
   height: 100vh;
   width: 200vw;
@@ -416,10 +421,8 @@ input[type="radio"] {
 
 .login__sub-header {
   font-size: 2rem;
-  transform: translateY(30px);
   font-weight: 600;
-  opacity: 0;
-  animation: fadeIn 1s 2s forwards ease-out; }
+  animation-delay: 2s; }
 
 .score__checkbox {
   visibility: hidden; }

@@ -18,6 +18,11 @@
   }
 }
 
+.fadeIn {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeIn 1s forwards ease-out;
+}
 .transition {
   // animation: fadeOut 1s 3s forwards;
   // z-index:2000;

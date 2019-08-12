@@ -36,8 +36,6 @@
 
 .login__sub-header {
   font-size: 2rem;
-  transform: translateY(30px);
   font-weight: 600;
-  opacity: 0;
-  animation: fadeIn 1s 2s forwards ease-out;
+  animation-delay: 2s;
 }

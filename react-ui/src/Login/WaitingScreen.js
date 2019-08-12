@@ -18,7 +18,7 @@ class WaitingScreen extends Component {
     return (
       <div>
         <ScoreButton playerData={this.state.playerData} />
-        <div className="container waitingScreen flex-column">
+        <div className="container waitingScreen flex-column fadeIn">
           <h1 className="waiting--title">Next round starts in </h1>
           <Timer mode="waiting" />
         </div>
