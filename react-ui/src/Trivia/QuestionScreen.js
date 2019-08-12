@@ -19,7 +19,7 @@ class QuestionScreen extends Component {
   }
   render() {
     return (
-      <div className="container">
+      <div className="container flex-column">
         <Timer />
 
         {/* update with correct category title */}

@@ -264,13 +264,8 @@ input[type="radio"] {
     .results__players__player--active {
       z-index: 10; }
 
-.container.waitingScreen {
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%); }
-  .container.waitingScreen h1 {
-    margin-bottom: 50px; }
+.container.waitingScreen h1 {
+  margin-bottom: 50px; }
 
 .avatar {
   width: 20vh;
@@ -331,14 +326,15 @@ input[type="radio"] {
 
 .container {
   width: 100%;
-  position: absolute;
-  top: 45%;
-  transform: translateY(-50%);
+  color: white; }
+
+.flex-column {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  color: white; }
+  width: 100%;
+  justify-content: space-around; }
 
 .prompt {
   font-weight: 400;
@@ -351,7 +347,8 @@ input[type="radio"] {
   overflow: hidden;
   position: relative;
   height: 5rem;
-  margin: 3rem; }
+  margin-top: 15vh;
+  margin-bottom: 5vh; }
   .textbox__input {
     position: absolute;
     top: 0;
@@ -396,13 +393,9 @@ input[type="radio"] {
     stroke: #fffe; }
 
 .login__logo {
-  left: 50%;
-  transform: translateX(-50%);
   display: flex;
   flex-direction: column;
   align-items: center;
-  top: 10%;
-  position: absolute;
   overflow: visible; }
 
 .transition #logo {
@@ -413,7 +406,9 @@ input[type="radio"] {
 
 .login__logo #logo {
   z-index: 100;
-  position: relative; }
+  position: relative;
+  margin: 10vh 0 5vh 0;
+  transition: 0.1s; }
 
 .transition #logo {
   animation: fadeOut 0s 3s forwards; }
@@ -457,6 +452,7 @@ input[type="radio"] {
 
 .scoreScreen {
   position: fixed;
+  left: 0;
   top: 0;
   padding-top: 10vh;
   width: 100vw;

@@ -9,7 +9,7 @@ class AnswerScreen extends Component {
   }
   render() {
     return (
-      <div className="container">
+      <div className="container flex-column">
         <Timer />
         <div className="category title">{this.props.category}</div>
         <div

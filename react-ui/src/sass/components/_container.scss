@@ -1,11 +1,16 @@
 .container {
   width: 100%;
-  position: absolute;
-  top: 45%;
-  transform: translateY(-50%);
+  // position: absolute;
+  // top: 45%;
+  // transform: translateY(-50%);
+  color: white;
+}
+
+.flex-column {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  color: white;
+  width: 100%;
+  justify-content: space-around;
 }

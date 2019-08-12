@@ -21,7 +21,7 @@ class Logo extends Component {
         <svg
           id="logo"
           width="560"
-          height="110"
+          height="60"
           viewBox="0 0 560 110"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
