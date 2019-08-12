@@ -45,7 +45,7 @@ class Game extends Component {
     this.setState({ screen: "transition" });
   }
   fullScreen() {
-    this.setState({ isFull: true });
+    // this.setState({ isFull: true });
   }
 
   render() {
@@ -74,11 +74,11 @@ class Game extends Component {
             </div>
           </div>
         </Fullscreen>
-        {this.state.waiting ? (
+        {/* {this.state.waiting ? (
           <FullScreenButton fullScreen={this.fullScreen.bind(this)} />
         ) : (
           ""
-        )}
+        )} */}
       </div>
     );
   }
