@@ -44,11 +44,17 @@ html {
     opacity: 0; } }
 
 @keyframes fadeIn {
-  from {
-    transform: translateY(2rem); }
   to {
     opacity: 1;
     transform: translateX(0); } }
+
+@keyframes fadeDown {
+  to {
+    opacity: 0;
+    transform: translateY(50px); } }
+
+.fadeDown {
+  animation: fadeDown 0.5s forwards ease-out; }
 
 .fadeIn {
   opacity: 0;
@@ -78,7 +84,7 @@ html {
   width: 100vw; }
 
 * {
-  overflow: hidden; }
+  overflow: visible; }
 
 input:focus,
 select:focus,

@@ -7,7 +7,8 @@ class LoginScreen extends Component {
     this.state = {
       textInput: "",
       playerName: "Your Name",
-      selectedFile: require("../default_avatar.png")
+      selectedFile: require("../default_avatar.png"),
+      fadingOut: false
     };
   }
 
@@ -16,7 +17,7 @@ class LoginScreen extends Component {
   }
 
   //upload name and photo to server
-  uploadHandler = () => {
+  uploadHandler = evt => {
     //set callback to make setState sync to socket.emit
 
     //set playername as global variable for when they reconnect
@@ -24,21 +25,27 @@ class LoginScreen extends Component {
 
     this.setState(
       {
-        playerName: this.state.textInput,
-        textInput: ""
+        playerName: this.state.textInput
       },
       () => {
-        console.log(this.state.playerName);
         socket.emit("info", this.state.playerName);
-        this.props.changeToWaiting();
+        this.setState({ fadingOut: true });
+        setTimeout(() => {
+          this.props.changeToWaiting();
+        }, 500); //fadeout animation length
       }
     );
-    this.props.fullScreen();
+    evt.preventDefault();
   };
   render() {
     return (
-      <div className="container login-screen flex-column">
-        <form className="flex-column">
+      <div
+        className={
+          "container login-screen flex-column " +
+          (this.state.fadingOut ? "fadeDown" : "")
+        }
+      >
+        <form onSubmit={this.uploadHandler.bind(this)} className="flex-column">
           <div className="textbox">
             <input
               type="text"
@@ -51,6 +58,7 @@ class LoginScreen extends Component {
             <label className="textbox__placeholder">Your Name</label>
           </div>
           <button
+            type="button"
             className="submit btn"
             onClick={this.uploadHandler.bind(this)}
           >

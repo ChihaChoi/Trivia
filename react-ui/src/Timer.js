@@ -75,7 +75,6 @@ class Timer extends Component {
             backgroundColor: "transparent"
           })}
         />
-        ;
       </div>
     );
   }

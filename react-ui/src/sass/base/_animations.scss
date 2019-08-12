@@ -9,15 +9,20 @@
   }
 }
 @keyframes fadeIn {
-  from {
-    transform: translateY(2rem);
-  }
   to {
     opacity: 1;
     transform: translateX(0);
   }
 }
-
+@keyframes fadeDown {
+  to {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+}
+.fadeDown {
+  animation: fadeDown 0.5s forwards ease-out;
+}
 .fadeIn {
   opacity: 0;
   transform: translateY(30px);
