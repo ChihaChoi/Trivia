@@ -115,6 +115,7 @@
   padding-bottom: 5px;
   padding-top: 5px;
   &--active {
+    background-color: transparent !important;
     font-weight: 600;
     border-bottom: 3px solid #fffd;
     border-top: 3px solid #fffd;
