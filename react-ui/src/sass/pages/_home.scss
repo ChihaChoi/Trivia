@@ -1,9 +1,14 @@
 .body {
   height: 100vh;
   width: 100vw;
+  &::-webkit-scrollbar {
+    visibility: hidden;
+  }
 }
 * {
   overflow: visible;
+
+  scrollbar-width: none;
 }
 
 //remove outlines on mobile devices
