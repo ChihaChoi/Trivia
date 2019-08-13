@@ -58,8 +58,21 @@ class TriviaMain extends Component {
       }, 1000);
     });
     socket.on("playerData", data => {
-      this.setState({ playerData: data });
-      console.log("received");
+      function compare(a, b) {
+        const scoreA = a.score;
+        const scoreB = b.score;
+
+        let comparison = 0;
+        if (scoreA < scoreB) {
+          comparison = 1;
+        } else if (scoreA > scoreB) {
+          comparison = -1;
+        }
+        return comparison;
+      }
+      let sortedData = data.sort(compare);
+      this.setState({ playerData: sortedData });
+      // console.log(data[0].name);
     });
   }
 
