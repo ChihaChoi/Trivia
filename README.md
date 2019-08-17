@@ -1,5 +1,6 @@
 # Real Time Trivia App
 
+![chiviha presentation](https://github.com/ChihaChoi/Trivia/blob/master/chiviha%20hero.png)
 This trivia game uses React for the front-end and node.js for the server. Using Socket.io, all the devices connected to the server see the same questions and answers in real time and can compete against each other using the real time score tracker.
 
 [The latest stable version is hosted here on heroku.](https://chiviha.herokuapp.com/ "live heroku app")
