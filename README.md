@@ -34,27 +34,3 @@ You can open the app by entering your IPv4 address into your browser followed by
 ```
 
 To find your IPv4 address, type into your console 'ipconfig'
-
-## To Do
-
-### General
-
-- Compress avatar before uploading
-- only one person can login to the same name at once (currently multiple users can log onto the same name to contribute score)
-- ~~add timer to waiting screen~~
-- ~~fix timers~~
-- ~~add category name to question page~~
-- pull max number (50) of questions from api and store in server rather than once every question
-
-### Styling
-
-- score screen
-- ~~results screen~~
-- ~~buttons on question page~~
-- transition animations
-- ~~timer animation~~
-
-### Optional Features
-
-- player connection status on score screen
-- vote on next category
