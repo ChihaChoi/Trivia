@@ -12,7 +12,6 @@ class Timer extends Component {
   componentDidMount() {
     //timer number logic
     socket.on("time", (time, mode) => {
-      console.log(time, "---", mode);
       //countdown timer on waiting screen will now countdown for both q&a timers
       if (mode === "question" && this.props.mode === "waiting") {
         const answerRoundLength = 9;

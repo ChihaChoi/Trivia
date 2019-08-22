@@ -41,7 +41,6 @@ class Game extends Component {
     });
   }
   handleSubmit() {
-    console.log("hellooooooo");
     this.setState({ screen: "transition" });
   }
   fullScreen() {

@@ -12,7 +12,6 @@ class ScoreButton extends Component {
         ? this.setState({ scoreScreen: true })
         : this.setState({ scoreScreen: false });
     }
-    console.log("hes");
   }
 
   render() {

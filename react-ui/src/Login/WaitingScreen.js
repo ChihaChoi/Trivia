@@ -11,7 +11,6 @@ class WaitingScreen extends Component {
   componentDidMount() {
     socket.on("playerData", data => {
       this.setState({ playerData: data });
-      console.log("received");
     });
   }
   render() {
