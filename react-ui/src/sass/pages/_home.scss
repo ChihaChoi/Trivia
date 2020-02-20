@@ -70,8 +70,6 @@ input[type="radio"] {
     }
 
     .btn {
-      transition: all 0.3s, transform 0.03s;
-
       background: color($color, button);
       &:active {
         background: color($color, button-active);

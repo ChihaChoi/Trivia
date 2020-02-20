@@ -123,7 +123,6 @@ input[type="radio"] {
     .theme-red .results__players__player--active {
       border: solid 3px white; }
   .theme-red .btn {
-    transition: all 0.3s, transform 0.03s;
     background: #791212; }
     .theme-red .btn:active {
       background: #7a2626; }
@@ -155,7 +154,6 @@ input[type="radio"] {
     .theme-green .results__players__player--active {
       border: solid 3px white; }
   .theme-green .btn {
-    transition: all 0.3s, transform 0.03s;
     background: #084921; }
     .theme-green .btn:active {
       background: #144b29; }
@@ -187,7 +185,6 @@ input[type="radio"] {
     .theme-blue .results__players__player--active {
       border: solid 3px white; }
   .theme-blue .btn {
-    transition: all 0.3s, transform 0.03s;
     background: #0a325a; }
     .theme-blue .btn:active {
       background: #173858; }
@@ -219,7 +216,6 @@ input[type="radio"] {
     .theme-purple .results__players__player--active {
       border: solid 3px white; }
   .theme-purple .btn {
-    transition: all 0.3s, transform 0.03s;
     background: #460d41; }
     .theme-purple .btn:active {
       background: #3f133b; }
@@ -305,9 +301,14 @@ input[type="radio"] {
   margin-bottom: 1rem;
   border-radius: 4px;
   color: white;
-  transition: transform 0.1s; }
+  transition: all 0.3s, transform 0.1s;
+  box-shadow: 0 2px 9px 1px #0003; }
   .btn:active {
-    transform: translateY(2px); }
+    transform: translateY(2px);
+    box-shadow: 0 2px 9px 1px #0006; }
+
+input[type="radio"]:checked ~ .btn {
+  box-shadow: 0 2px 9px 1px #0006; }
 
 .login-screen .btn {
   padding: 1rem; }
@@ -315,7 +316,9 @@ input[type="radio"] {
     font-size: 3rem; }
     .login-screen .btn.submit.invalid {
       background: #7779;
-      color: #2229; }
+      color: #2229;
+      box-shadow: none;
+      transform: translateY(2px); }
 
 .answer-btn .btn {
   display: flex;
@@ -325,7 +328,7 @@ input[type="radio"] {
   .answer-btn .btn label {
     width: 100%;
     height: 100%;
-    padding: 1.5rem; }
+    padding: 2rem; }
 
 .answer-btn {
   opacity: 0;
